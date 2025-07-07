@@ -1,4 +1,6 @@
-import "./globals.css";
+import "./global-styles.css";
+// import "./globals.css";
+import "../components/Layout.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

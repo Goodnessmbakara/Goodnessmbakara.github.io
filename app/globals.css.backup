@@ -4,30 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-:root {
-  /* Professional Color Palette */
-  --primary-blue: 26 35 126;
-  --primary-teal: 0 191 174;
-  --accent-purple: 103 58 183;
-  --neutral-50: 250 250 250;
-  --neutral-100: 245 245 245;
-  --neutral-200: 229 229 229;
-  --neutral-300: 212 212 212;
-  --neutral-400: 163 163 163;
-  --neutral-500: 115 115 115;
-  --neutral-600: 82 82 82;
-  --neutral-700: 64 64 64;
-  --neutral-800: 38 38 38;
-  --neutral-900: 23 23 23;
-  --neutral-950: 10 10 10;
-  
-  /* Semantic Colors */
-  --success: 34 197 94;
-  --warning: 245 158 11;
-  --error: 239 68 68;
-  --info: 59 130 246;
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -94,7 +70,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Typography Scale */
   h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
@@ -121,7 +96,6 @@
     font-weight: 500;
   }
 
-  /* Code typography */
   code, pre {
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
     font-size: 0.875em;
@@ -129,7 +103,6 @@
 }
 
 @layer components {
-  /* Professional gradient text */
   .text-gradient-primary {
     @apply bg-gradient-to-r from-blue-900 via-blue-800 to-teal-500 bg-clip-text text-transparent;
   }
@@ -138,7 +111,6 @@
     @apply bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent;
   }
 
-  /* Sophisticated button styles */
   .btn-primary {
     @apply bg-gradient-to-r from-blue-900 to-blue-800 hover:from-blue-800 hover:to-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
   }
@@ -151,7 +123,6 @@
     @apply bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl;
   }
 
-  /* Card styles */
   .card-elegant {
     @apply bg-white border border-neutral-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden;
   }
@@ -160,7 +131,6 @@
     @apply transform -translate-y-1 shadow-lg;
   }
 
-  /* Section styles */
   .section-padding {
     @apply py-16 md:py-24;
   }
@@ -168,91 +138,4 @@
   .container-max {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-}
-
-@layer utilities {
-  /* Custom scrollbar */
-  .scrollbar-thin {
-    scrollbar-width: thin;
-    scrollbar-color: rgb(var(--primary)) transparent;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-track {
-    @apply bg-neutral-100;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply bg-blue-900 rounded-full;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    @apply bg-blue-800;
-  }
-
-  /* Focus styles */
-  .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2;
-  }
-
-  /* Animation utilities */
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.4s ease-out;
-  }
-}
-
-/* Keyframe animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Dark mode scrollbar */
-.dark .scrollbar-thin::-webkit-scrollbar-track {
-  @apply bg-neutral-800;
-}
-
-.dark .scrollbar-thin::-webkit-scrollbar-thumb {
-  @apply bg-teal-500;
-}
-
-.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  @apply bg-teal-400;
-}
+} 

@@ -1,0 +1,31 @@
+.footer {
+  background: #1a237e;
+  color: #fff;
+  padding: 2.5rem 0 1.5rem 0;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 4rem;
+  border-radius: 1.25rem 1.25rem 0 0;
+  box-shadow: 0 -2px 16px rgba(26,35,126,0.10);
+}
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.footerBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+@media (max-width: 700px) {
+  .footerContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+} 
