@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 interface StaggeredRevealProps {
-  children: React.ReactNode[];
+  children: React.ReactNode | React.ReactNode[];
   staggerDelay?: number;
   direction?: 'up' | 'down' | 'left' | 'right' | 'fade' | 'scale';
   threshold?: number;
@@ -17,14 +17,17 @@ export default function StaggeredReveal({
   threshold = 0.1,
   className = ''
 }: StaggeredRevealProps) {
-  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(children.length).fill(false));
+  // Convert children to array if it's a single element
+  const childrenArray = Array.isArray(children) ? children : [children];
+  
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(childrenArray.length).fill(false));
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          children.forEach((_, index) => {
+          childrenArray.forEach((_, index) => {
             setTimeout(() => {
               setVisibleItems(prev => {
                 const newState = [...prev];
@@ -51,7 +54,7 @@ export default function StaggeredReveal({
         observer.unobserve(currentElement);
       }
     };
-  }, [children.length, staggerDelay, threshold]);
+  }, [childrenArray.length, staggerDelay, threshold]);
 
   const getInitialTransform = () => {
     switch (direction) {
@@ -81,7 +84,7 @@ export default function StaggeredReveal({
 
   return (
     <div ref={elementRef} className={className}>
-      {children.map((child, index) => (
+      {childrenArray.map((child, index) => (
         <div
           key={index}
           className="transition-all duration-500 ease-out"
