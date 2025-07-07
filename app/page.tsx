@@ -1,3 +1,4 @@
+"use client";
 import AnimatedProfileCard from "@/components/AnimatedProfileCard";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
