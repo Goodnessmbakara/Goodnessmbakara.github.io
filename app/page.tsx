@@ -95,6 +95,13 @@ export default function Home() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
               </button>
               <button
+                onClick={() => scrollToSection("web3-expertise")}
+                className="text-gray-300 hover:text-emerald-400 transition-all duration-300 relative group font-medium"
+              >
+                Web3 Expertise
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              <button
                 onClick={() => scrollToSection("skills")}
                 className="text-gray-300 hover:text-emerald-400 transition-all duration-300 relative group font-medium"
               >
@@ -229,64 +236,82 @@ export default function Home() {
                   <h2 className="text-2xl lg:text-3xl text-gray-300 font-light">
                     Backend Engineer & Blockchain Developer
                   </h2>
-                  <div className="flex items-center space-x-2 text-emerald-400">
-                    <GraduationCap className="w-5 h-5" />
-                    <span className="text-lg font-semibold">
-                      Computer Science Graduate
-                    </span>
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-2 text-emerald-400">
+                      <GraduationCap className="w-5 h-5" />
+                      <span className="text-lg font-semibold">
+                        Full-Stack Web3 Engineer
+                      </span>
+                    </div>
+
+                    <div className="flex items-center space-x-2 text-cyan-400">
+                      <Trophy className="w-5 h-5" />
+                      <span className="text-lg font-semibold">
+                        Superdevs Academy Finalist (Top 400/5000+)
+                      </span>
+                    </div>
+
+                    <div className="flex items-center space-x-2 text-purple-400">
+                      <Crown className="w-5 h-5" />
+                      <span className="text-lg font-semibold">
+                        Solana & EVM Specialist
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
-                  Dynamic backend engineer and proven team leader with track
-                  record of managing 30+ engineers and building scalable
-                  solutions. Computer Science graduate specializing in Django,
-                  FastAPI, blockchain development (Solidity, EVM, Solana), and
-                  cloud infrastructure.
-                </p>
+                  <p className="text-lg text-gray-400 leading-relaxed max-w-2xl">
+                    Full-stack Web3 engineer specializing in cross-chain
+                    development with deep expertise in Solana and EVM
+                    ecosystems. Selected among top 400 developers from 5000+
+                    applicants for Superdevs Academy. Proven track record
+                    building scalable DeFi protocols, smart contracts, and
+                    cross-chain infrastructure using Rust, Solidity, and modern
+                    web technologies.
+                  </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    onClick={() => scrollToSection("experience")}
-                    className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold text-lg px-8 py-3 group"
-                  >
-                    View My Experience
-                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => scrollToSection("contact")}
-                    className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 text-lg px-8 py-3"
-                  >
-                    Let's Connect
-                  </Button>
-                </div>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                      onClick={() => scrollToSection("experience")}
+                      className="bg-emerald-500 hover:bg-emerald-600 text-black font-semibold text-lg px-8 py-3 group"
+                    >
+                      View My Experience
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() => scrollToSection("contact")}
+                      className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 text-lg px-8 py-3"
+                    >
+                      Let's Connect
+                    </Button>
+                  </div>
 
-                <div className="flex items-center space-x-6 pt-4">
-                  <a
-                    href="https://github.com/Goodnessmbakara"
-                    className="text-gray-400 hover:text-emerald-400 transition-colors"
-                  >
-                    <Github className="w-6 h-6" />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/goodnessmbakara/"
-                    className="text-gray-400 hover:text-emerald-400 transition-colors"
-                  >
-                    <Linkedin className="w-6 h-6" />
-                  </a>
-                  <a
-                    href="https://twitter.com/gooodnesmbakara"
-                    className="text-gray-400 hover:text-emerald-400 transition-colors"
-                  >
-                    <Twitter className="w-6 h-6" />
-                  </a>
-                  <a
-                    href="mailto:mbakaragoodness2003@gmail.com"
-                    className="text-gray-400 hover:text-emerald-400 transition-colors"
-                  >
-                    <Mail className="w-6 h-6" />
-                  </a>
+                  <div className="flex items-center space-x-6 pt-4">
+                    <a
+                      href="https://github.com/Goodnessmbakara"
+                      className="text-gray-400 hover:text-emerald-400 transition-colors"
+                    >
+                      <Github className="w-6 h-6" />
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/goodnessmbakara/"
+                      className="text-gray-400 hover:text-emerald-400 transition-colors"
+                    >
+                      <Linkedin className="w-6 h-6" />
+                    </a>
+                    <a
+                      href="https://twitter.com/gooodnesmbakara"
+                      className="text-gray-400 hover:text-emerald-400 transition-colors"
+                    >
+                      <Twitter className="w-6 h-6" />
+                    </a>
+                    <a
+                      href="mailto:mbakaragoodness2003@gmail.com"
+                      className="text-gray-400 hover:text-emerald-400 transition-colors"
+                    >
+                      <Mail className="w-6 h-6" />
+                    </a>
+                  </div>
                 </div>
               </StaggeredReveal>
             </div>
@@ -547,296 +572,294 @@ export default function Home() {
           </ScrollReveal>
 
           <StaggeredReveal staggerDelay={200} direction="up">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {/* Backend Engineer - KWEK */}
-              <Card className="bg-slate-800/50 border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-500 group relative overflow-hidden h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <CardContent className="p-6 relative z-10 h-full flex flex-col">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">
-                        Backend Engineer
-                      </h3>
-                      <p className="text-emerald-400 font-semibold">KWEK</p>
-                    </div>
-                    <span className="text-gray-400 text-sm bg-slate-700/50 px-3 py-1 rounded-full">
-                      Dec 2024 - Feb 2025
+            {/* Backend Engineer - KWEK */}
+            <Card className="bg-slate-800/50 border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-500 group relative overflow-hidden h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <CardContent className="p-6 relative z-10 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">
+                      Backend Engineer
+                    </h3>
+                    <p className="text-emerald-400 font-semibold">KWEK</p>
+                  </div>
+                  <span className="text-gray-400 text-sm bg-slate-700/50 px-3 py-1 rounded-full">
+                    Dec 2024 - Feb 2025
+                  </span>
+                </div>
+                <ul className="text-gray-300 space-y-2 mb-6 flex-1">
+                  <li className="flex items-start space-x-2">
+                    <span className="text-emerald-400 mt-1">•</span>
+                    <span>
+                      Developed and optimized backend APIs for a fast-growing
+                      e-commerce platform
                     </span>
-                  </div>
-                  <ul className="text-gray-300 space-y-2 mb-6 flex-1">
-                    <li className="flex items-start space-x-2">
-                      <span className="text-emerald-400 mt-1">•</span>
-                      <span>
-                        Developed and optimized backend APIs for a fast-growing
-                        e-commerce platform
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-emerald-400 mt-1">•</span>
-                      <span>
-                        Implemented secure authentication and authorization
-                        mechanisms using JWT
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-emerald-400 mt-1">•</span>
-                      <span>
-                        Improved database performance by designing efficient
-                        PostgreSQL schemas
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-emerald-400 mt-1">•</span>
-                      <span>
-                        Integrated third-party payment gateways to facilitate
-                        seamless transactions
-                      </span>
-                    </li>
-                  </ul>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    <Badge
-                      variant="secondary"
-                      className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-                    >
-                      Django
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
-                    >
-                      PostgreSQL
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
-                    >
-                      JWT
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-emerald-400 mt-1">•</span>
+                    <span>
+                      Implemented secure authentication and authorization
+                      mechanisms using JWT
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-emerald-400 mt-1">•</span>
+                    <span>
+                      Improved database performance by designing efficient
+                      PostgreSQL schemas
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-emerald-400 mt-1">•</span>
+                    <span>
+                      Integrated third-party payment gateways to facilitate
+                      seamless transactions
+                    </span>
+                  </li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <Badge
+                    variant="secondary"
+                    className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                  >
+                    Django
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
+                  >
+                    PostgreSQL
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
+                  >
+                    JWT
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Full Stack Developer - ZIDIO */}
-              <Card className="bg-slate-800/50 border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-500 group relative overflow-hidden h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <CardContent className="p-6 relative z-10 h-full flex flex-col">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                        Full Stack Developer
-                      </h3>
-                      <p className="text-cyan-400 font-semibold">
-                        ZIDIO Development
-                      </p>
-                    </div>
-                    <span className="text-gray-400 text-sm bg-slate-700/50 px-3 py-1 rounded-full">
-                      Aug 2024 - Nov 2024
+            {/* Full Stack Developer - ZIDIO */}
+            <Card className="bg-slate-800/50 border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-500 group relative overflow-hidden h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <CardContent className="p-6 relative z-10 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                      Full Stack Developer
+                    </h3>
+                    <p className="text-cyan-400 font-semibold">
+                      ZIDIO Development
+                    </p>
+                  </div>
+                  <span className="text-gray-400 text-sm bg-slate-700/50 px-3 py-1 rounded-full">
+                    Aug 2024 - Nov 2024
+                  </span>
+                </div>
+                <ul className="text-gray-300 space-y-2 mb-6 flex-1">
+                  <li className="flex items-start space-x-2">
+                    <span className="text-cyan-400 mt-1">•</span>
+                    <span>
+                      Completed intensive Web Development internship working
+                      with developers, designers and PMs
                     </span>
-                  </div>
-                  <ul className="text-gray-300 space-y-2 mb-6 flex-1">
-                    <li className="flex items-start space-x-2">
-                      <span className="text-cyan-400 mt-1">•</span>
-                      <span>
-                        Completed intensive Web Development internship working
-                        with developers, designers and PMs
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-cyan-400 mt-1">•</span>
-                      <span>
-                        Built certificate generation and verification tools, job
-                        posting portal
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-cyan-400 mt-1">•</span>
-                      <span>
-                        Integrated Socket.IO for live job updates and
-                        notifications
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-cyan-400 mt-1">•</span>
-                      <span>
-                        Designed and optimized MongoDB schemas for dynamic job
-                        listings
-                      </span>
-                    </li>
-                  </ul>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    <Badge
-                      variant="secondary"
-                      className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-                    >
-                      MongoDB
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
-                    >
-                      Socket.IO
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
-                    >
-                      Cloud
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-cyan-400 mt-1">•</span>
+                    <span>
+                      Built certificate generation and verification tools, job
+                      posting portal
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-cyan-400 mt-1">•</span>
+                    <span>
+                      Integrated Socket.IO for live job updates and
+                      notifications
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-cyan-400 mt-1">•</span>
+                    <span>
+                      Designed and optimized MongoDB schemas for dynamic job
+                      listings
+                    </span>
+                  </li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <Badge
+                    variant="secondary"
+                    className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                  >
+                    MongoDB
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
+                  >
+                    Socket.IO
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
+                  >
+                    Cloud
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Backend Engineer Intern & Team Lead - HngX */}
-              <Card className="bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 group relative overflow-hidden h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <CardContent className="p-6 relative z-10 h-full flex flex-col">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2">
-                        <span>Backend Engineer Intern & Team Lead</span>
-                        <Crown className="w-5 h-5 text-purple-400" />
-                      </h3>
-                      <p className="text-purple-400 font-semibold">HngX</p>
-                    </div>
-                    <span className="text-gray-400 text-sm bg-slate-700/50 px-3 py-1 rounded-full">
-                      Sep 2023 - Oct 2023
+            {/* Backend Engineer Intern & Team Lead - HngX */}
+            <Card className="bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 group relative overflow-hidden h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <CardContent className="p-6 relative z-10 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2">
+                      <span>Backend Engineer Intern & Team Lead</span>
+                      <Crown className="w-5 h-5 text-purple-400" />
+                    </h3>
+                    <p className="text-purple-400 font-semibold">HngX</p>
+                  </div>
+                  <span className="text-gray-400 text-sm bg-slate-700/50 px-3 py-1 rounded-full">
+                    Sep 2023 - Oct 2023
+                  </span>
+                </div>
+                <ul className="text-gray-300 space-y-2 mb-6 flex-1">
+                  <li className="flex items-start space-x-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>
+                      <strong>Led a team of over 30 engineers</strong> across
+                      UI/UX, Frontend and Backend tracks
                     </span>
-                  </div>
-                  <ul className="text-gray-300 space-y-2 mb-6 flex-1">
-                    <li className="flex items-start space-x-2">
-                      <span className="text-purple-400 mt-1">•</span>
-                      <span>
-                        <strong>Led a team of over 30 engineers</strong> across
-                        UI/UX, Frontend and Backend tracks
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-purple-400 mt-1">•</span>
-                      <span>
-                        Built e-assessment platform as part of zuri-portfolio
-                        application
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-purple-400 mt-1">•</span>
-                      <span>
-                        Developed Chrome extension backend for screen recording
-                        with video storage
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-purple-400 mt-1">•</span>
-                      <span>
-                        Created event management platform for community and
-                        event creation
-                      </span>
-                    </li>
-                  </ul>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    <Badge
-                      variant="secondary"
-                      className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-                    >
-                      Python
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
-                    >
-                      Django REST
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
-                    >
-                      Flask
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 transition-colors"
-                    >
-                      Leadership
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>
+                      Built e-assessment platform as part of zuri-portfolio
+                      application
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>
+                      Developed Chrome extension backend for screen recording
+                      with video storage
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-purple-400 mt-1">•</span>
+                    <span>
+                      Created event management platform for community and event
+                      creation
+                    </span>
+                  </li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <Badge
+                    variant="secondary"
+                    className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                  >
+                    Python
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
+                  >
+                    Django REST
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
+                  >
+                    Flask
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 transition-colors"
+                  >
+                    Leadership
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Backend Engineer - ALX */}
-              <Card className="bg-slate-800/50 border-orange-500/20 hover:border-orange-500/40 transition-all duration-500 group relative overflow-hidden h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <CardContent className="p-6 relative z-10 h-full flex flex-col">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
-                        Backend Engineer
-                      </h3>
-                      <p className="text-orange-400 font-semibold">
-                        African Leaders X (ALX)
-                      </p>
-                    </div>
-                    <span className="text-gray-400 text-sm bg-slate-700/50 px-3 py-1 rounded-full">
-                      Jun 2022 - May 2023
+            {/* Backend Engineer - ALX */}
+            <Card className="bg-slate-800/50 border-orange-500/20 hover:border-orange-500/40 transition-all duration-500 group relative overflow-hidden h-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <CardContent className="p-6 relative z-10 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
+                      Backend Engineer
+                    </h3>
+                    <p className="text-orange-400 font-semibold">
+                      African Leaders X (ALX)
+                    </p>
+                  </div>
+                  <span className="text-gray-400 text-sm bg-slate-700/50 px-3 py-1 rounded-full">
+                    Jun 2022 - May 2023
+                  </span>
+                </div>
+                <ul className="text-gray-300 space-y-2 mb-6 flex-1">
+                  <li className="flex items-start space-x-2">
+                    <span className="text-orange-400 mt-1">•</span>
+                    <span>
+                      Designed and managed databases, including schema creation
+                      using drawing tools
                     </span>
-                  </div>
-                  <ul className="text-gray-300 space-y-2 mb-6 flex-1">
-                    <li className="flex items-start space-x-2">
-                      <span className="text-orange-400 mt-1">•</span>
-                      <span>
-                        Designed and managed databases, including schema
-                        creation using drawing tools
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-orange-400 mt-1">•</span>
-                      <span>
-                        Integrated Redis and caching for enhanced data retrieval
-                        performance
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-orange-400 mt-1">•</span>
-                      <span>
-                        Utilized SQL and NoSQL database systems to store and
-                        manage data efficiently
-                      </span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-orange-400 mt-1">•</span>
-                      <span>
-                        Implemented various authentication systems including
-                        basic, session token, and JWT authentication
-                      </span>
-                    </li>
-                  </ul>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    <Badge
-                      variant="secondary"
-                      className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-                    >
-                      SQL/NoSQL
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
-                    >
-                      Redis
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
-                    >
-                      Authentication
-                    </Badge>
-                    <Badge
-                      variant="secondary"
-                      className="bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 transition-colors"
-                    >
-                      Database Design
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-orange-400 mt-1">•</span>
+                    <span>
+                      Integrated Redis and caching for enhanced data retrieval
+                      performance
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-orange-400 mt-1">•</span>
+                    <span>
+                      Utilized SQL and NoSQL database systems to store and
+                      manage data efficiently
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <span className="text-orange-400 mt-1">•</span>
+                    <span>
+                      Implemented various authentication systems including
+                      basic, session token, and JWT authentication
+                    </span>
+                  </li>
+                </ul>
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  <Badge
+                    variant="secondary"
+                    className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                  >
+                    SQL/NoSQL
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
+                  >
+                    Redis
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
+                  >
+                    Authentication
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 transition-colors"
+                  >
+                    Database Design
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </StaggeredReveal>
         </div>
       </section>
@@ -890,11 +913,10 @@ export default function Home() {
           </ScrollReveal>
 
           <StaggeredReveal staggerDelay={250} direction="up">
+            {/* Solana Fellowship Server - Featured Project */}
             <Card className="bg-slate-800/50 border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-500 group relative overflow-hidden">
-              {/* Animated Background Gradient */}
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-              {/* Floating Icons */}
               <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
                 <Rocket className="w-8 h-8 text-emerald-400 animate-bounce" />
               </div>
@@ -902,10 +924,146 @@ export default function Home() {
               <CardContent className="p-8 relative z-10">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors duration-300 flex items-center space-x-2">
-                    <span>E-Commerce Platform (KWEK)</span>
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span>Solana Fellowship Server</span>
+                    <Badge className="bg-emerald-500/20 text-emerald-400 text-xs">
+                      Superdevs Academy
+                    </Badge>
                   </h3>
-                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-emerald-400 transition-colors group-hover:rotate-12 duration-300" />
+                  <ExternalLink
+                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-400 transition-colors group-hover:rotate-12 duration-300 cursor-pointer"
+                    onClick={() =>
+                      window.open(
+                        "https://github.com/Goodnessmbakara/solana-fellowship-server",
+                        "_blank"
+                      )
+                    }
+                  />
+                </div>
+                <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
+                  Production-ready Rust HTTP server for Solana development
+                  tasks. Built comprehensive API for keypair generation, SPL
+                  token operations, message signing/verification, and
+                  transaction instruction creation. Selected among top 400
+                  developers from 5000+ applicants for Superdevs Academy
+                  interview.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge
+                    variant="secondary"
+                    className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                  >
+                    Rust
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
+                  >
+                    Solana
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
+                  >
+                    SPL Tokens
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 transition-colors"
+                  >
+                    HTTP API
+                  </Badge>
+                </div>
+                <div className="text-emerald-400 text-sm font-semibold flex items-center space-x-2">
+                  <Trophy className="w-4 h-4" />
+                  <span>Superdevs Academy Finalist • Production Ready</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Neon Aave Loan - Cross-Chain DeFi */}
+            <Card className="bg-slate-800/50 border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-500 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                <Globe
+                  className="w-8 h-8 text-cyan-400 animate-spin"
+                  style={{ animationDuration: "4s" }}
+                />
+              </div>
+
+              <CardContent className="p-8 relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2">
+                    <span>Neon Aave Flash Loan</span>
+                    <Badge className="bg-cyan-500/20 text-cyan-400 text-xs">
+                      Cross-Chain DeFi
+                    </Badge>
+                  </h3>
+                  <ExternalLink
+                    className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors group-hover:rotate-12 duration-300 cursor-pointer"
+                    onClick={() =>
+                      window.open(
+                        "https://github.com/Goodnessmbakara/neon-aave-loan",
+                        "_blank"
+                      )
+                    }
+                  />
+                </div>
+                <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
+                  Cross-chain flash loan implementation enabling Solidity
+                  developers to build on Solana without learning Rust. Leverages
+                  Neon EVM for composability, empowering seamless DeFi protocol
+                  development across chains with automated environment
+                  validation and one-click setup scripts.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <Badge
+                    variant="secondary"
+                    className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+                  >
+                    Solidity
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
+                  >
+                    Neon EVM
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
+                  >
+                    Flash Loans
+                  </Badge>
+                  <Badge
+                    variant="secondary"
+                    className="bg-orange-500/10 text-orange-400 hover:bg-orange-500/20 transition-colors"
+                  >
+                    Hardhat
+                  </Badge>
+                </div>
+                <div className="text-cyan-400 text-sm font-semibold flex items-center space-x-2">
+                  <Globe className="w-4 h-4" />
+                  <span>Cross-Chain DeFi • Production Ready</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* E-Commerce Platform - Keep as supporting project */}
+            <Card className="bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                <Lightning className="w-8 h-8 text-purple-400 animate-pulse" />
+              </div>
+
+              <CardContent className="p-8 relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2">
+                    <span>E-Commerce Platform (KWEK)</span>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                  </h3>
+                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors group-hover:rotate-12 duration-300" />
                 </div>
                 <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
                   Fast-growing e-commerce platform with optimized APIs, secure
@@ -932,153 +1090,9 @@ export default function Home() {
                     JWT
                   </Badge>
                 </div>
-                <div className="text-emerald-400 text-sm font-semibold flex items-center space-x-2">
+                <div className="text-purple-400 text-sm font-semibold flex items-center space-x-2">
                   <Rocket className="w-4 h-4" />
                   <span>Production Ready • Payment Integration</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-500 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                <Globe
-                  className="w-8 h-8 text-cyan-400 animate-spin"
-                  style={{ animationDuration: "4s" }}
-                />
-              </div>
-
-              <CardContent className="p-8 relative z-10">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2">
-                    <span>Screen Recording Extension</span>
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                  </h3>
-                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors group-hover:rotate-12 duration-300" />
-                </div>
-                <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
-                  Chrome extension with backend API for screen recording
-                  functionality. Users can save and retrieve videos at
-                  convenience with secure storage.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <Badge
-                    variant="secondary"
-                    className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-                  >
-                    Python
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
-                  >
-                    Flask
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
-                  >
-                    Chrome API
-                  </Badge>
-                </div>
-                <div className="text-cyan-400 text-sm font-semibold flex items-center space-x-2">
-                  <Globe className="w-4 h-4" />
-                  <span>Live Extension • Video Storage</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                <Lightning className="w-8 h-8 text-purple-400 animate-pulse" />
-              </div>
-
-              <CardContent className="p-8 relative z-10">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300 flex items-center space-x-2">
-                    <span>Event Management Platform</span>
-                    <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                  </h3>
-                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors group-hover:rotate-12 duration-300" />
-                </div>
-                <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
-                  Comprehensive platform where users can create different
-                  communities and engaging events with full backend API support
-                  and real-time features.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <Badge
-                    variant="secondary"
-                    className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-                  >
-                    Django REST
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
-                  >
-                    PostgreSQL
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
-                  >
-                    Real-time
-                  </Badge>
-                </div>
-                <div className="text-purple-400 text-sm font-semibold flex items-center space-x-2">
-                  <Lightning className="w-4 h-4" />
-                  <span>Community Building • Live Events</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-orange-500/20 hover:border-orange-500/40 transition-all duration-500 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                <Database className="w-8 h-8 text-orange-400 animate-pulse" />
-              </div>
-
-              <CardContent className="p-8 relative z-10">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300 flex items-center space-x-2">
-                    <span>Weather Forecasting System</span>
-                    <div className="w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-                  </h3>
-                  <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-orange-400 transition-colors group-hover:rotate-12 duration-300" />
-                </div>
-                <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
-                  Data scraping and formatting system for weather forecasts with
-                  integrated cron job for automated system updates and
-                  monitoring.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <Badge
-                    variant="secondary"
-                    className="bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-                  >
-                    Python
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition-colors"
-                  >
-                    Cron Jobs
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors"
-                  >
-                    Data Scraping
-                  </Badge>
-                </div>
-                <div className="text-orange-400 text-sm font-semibold flex items-center space-x-2">
-                  <Database className="w-4 h-4" />
-                  <span>Automated Updates • Data Processing</span>
                 </div>
               </CardContent>
             </Card>
@@ -1107,12 +1121,20 @@ export default function Home() {
               </h3>
               <div className="space-y-6">
                 {[
-                  { name: "Python & Django", level: 95, color: "emerald" },
-                  { name: "Django REST Framework", level: 93, color: "cyan" },
-                  { name: "FastAPI", level: 88, color: "emerald" },
+                  {
+                    name: "Rust & Solana Development",
+                    level: 92,
+                    color: "emerald",
+                  },
+                  { name: "Python & Django", level: 95, color: "cyan" },
+                  {
+                    name: "Solidity & Smart Contracts",
+                    level: 90,
+                    color: "emerald",
+                  },
+                  { name: "Django REST Framework", level: 93, color: "purple" },
                   { name: "PostgreSQL & MongoDB", level: 90, color: "cyan" },
-                  { name: "Java & C Programming", level: 85, color: "purple" },
-                  { name: "Go Language", level: 80, color: "emerald" },
+                  { name: "FastAPI", level: 88, color: "emerald" },
                 ].map((skill) => (
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between">
@@ -1140,20 +1162,24 @@ export default function Home() {
               </h3>
               <div className="space-y-6">
                 {[
+                  { name: "Solana Development", level: 92, color: "cyan" },
                   {
-                    name: "Solidity & Smart Contracts",
+                    name: "EVM & Cross-Chain DeFi",
                     level: 90,
-                    color: "cyan",
+                    color: "purple",
                   },
-                  { name: "EVM Development", level: 88, color: "purple" },
                   {
-                    name: "Solana & Move Language",
+                    name: "SPL Token Development",
+                    level: 88,
+                    color: "emerald",
+                  },
+                  { name: "Neon EVM Integration", level: 87, color: "cyan" },
+                  { name: "Web3.js & Ethers.js", level: 89, color: "purple" },
+                  {
+                    name: "Flash Loans & DeFi Protocols",
                     level: 85,
                     color: "emerald",
                   },
-                  { name: "Web3.js & Ethers.js", level: 87, color: "cyan" },
-                  { name: "DeFi Protocols", level: 83, color: "purple" },
-                  { name: "NFT Development", level: 80, color: "emerald" },
                 ].map((skill) => (
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between">
@@ -1244,6 +1270,83 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Web3 Expertise Section */}
+      <section id="web3-expertise" className="py-24 bg-slate-900/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <ScrollReveal direction="up" duration={1000}>
+            <div className="text-center mb-16">
+              <Badge className="bg-emerald-500/10 text-emerald-400 border-emerald-500/30 mb-4">
+                Web3 Expertise
+              </Badge>
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                Cross-Chain Development Specialist
+              </h2>
+              <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+                Bridging Solana and EVM ecosystems with deep expertise in Rust,
+                Solidity, and cross-chain DeFi protocols.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <StaggeredReveal staggerDelay={200} direction="up">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="bg-slate-800/50 border-emerald-500/20 text-center">
+                <CardContent className="p-8">
+                  <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-emerald-400 font-bold text-xl">
+                      S
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    Solana Development
+                  </h3>
+                  <ul className="text-gray-400 text-sm space-y-2 text-left">
+                    <li>• Rust smart contracts & programs</li>
+                    <li>• SPL token creation & management</li>
+                    <li>• Transaction instruction building</li>
+                    <li>• Keypair generation & management</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-slate-800/50 border-cyan-500/20 text-center">
+                <CardContent className="p-8">
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-cyan-400 font-bold text-xl">E</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    EVM & DeFi
+                  </h3>
+                  <ul className="text-gray-400 text-sm space-y-2 text-left">
+                    <li>• Solidity smart contracts</li>
+                    <li>• Flash loan implementations</li>
+                    <li>• DeFi protocol development</li>
+                    <li>• Web3.js & Ethers.js integration</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-slate-800/50 border-purple-500/20 text-center">
+                <CardContent className="p-8">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-purple-400 font-bold text-xl">C</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    Cross-Chain Solutions
+                  </h3>
+                  <ul className="text-gray-400 text-sm space-y-2 text-left">
+                    <li>• Neon EVM integration</li>
+                    <li>• Cross-chain DeFi protocols</li>
+                    <li>• Bridge implementations</li>
+                    <li>• Multi-chain architecture</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </StaggeredReveal>
+        </div>
+      </section>
+
       {/* Achievements Section */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
@@ -1263,40 +1366,41 @@ export default function Home() {
               <CardContent className="p-8">
                 <Trophy className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-4">
-                  4X Hackathon Winner
+                  Superdevs Academy Finalist
                 </h3>
                 <p className="text-gray-400">
-                  Consistently delivering innovative solutions under pressure,
-                  showcasing technical excellence and creative problem-solving
-                  across multiple competitions.
+                  Selected among top 400 developers from 5000+ applicants for
+                  Superdevs Academy interview. Demonstrated exceptional Solana
+                  development skills with production-ready Rust server
+                  implementation.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-slate-800/50 border-cyan-500/20 text-center">
               <CardContent className="p-8">
-                <Users className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
+                <Crown className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-4">
-                  Team Leadership
+                  Cross-Chain DeFi Expert
                 </h3>
                 <p className="text-gray-400">
-                  Successfully led teams of 30+ engineers across multiple
-                  tracks, fostering collaboration and delivering complex
-                  projects on time.
+                  Built cross-chain flash loan protocols using Neon EVM,
+                  enabling Solidity developers to build on Solana. Specialized
+                  in bridging EVM and Solana ecosystems.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-slate-800/50 border-purple-500/20 text-center">
               <CardContent className="p-8">
-                <GraduationCap className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                <Users className="w-12 h-12 text-purple-400 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-white mb-4">
-                  Academic Excellence
+                  Team Leadership
                 </h3>
                 <p className="text-gray-400">
-                  Computer Science graduate with strong foundation in
-                  algorithms, data structures, and software development
-                  principles.
+                  Successfully led teams of 30+ engineers across multiple
+                  tracks, fostering collaboration and delivering complex Web3
+                  projects on time with 100% completion rate.
                 </p>
               </CardContent>
             </Card>
