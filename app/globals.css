@@ -6,9 +6,9 @@
 
 :root {
   /* Professional Color Palette */
-  --primary-blue: 26 35 126; /* #1A237E - Deep blue from logo */
-  --primary-teal: 0 191 174; /* #00BFAE - Teal from logo */
-  --accent-purple: 103 58 183; /* #673AB7 - Complementary purple */
+  --primary-blue: 26 35 126;
+  --primary-teal: 0 191 174;
+  --accent-purple: 103 58 183;
   --neutral-50: 250 250 250;
   --neutral-100: 245 245 245;
   --neutral-200: 229 229 229;
@@ -22,10 +22,10 @@
   --neutral-950: 10 10 10;
   
   /* Semantic Colors */
-  --success: 34 197 94; /* Green */
-  --warning: 245 158 11; /* Amber */
-  --error: 239 68 68; /* Red */
-  --info: 59 130 246; /* Blue */
+  --success: 34 197 94;
+  --warning: 245 158 11;
+  --error: 239 68 68;
+  --info: 59 130 246;
 }
 
 @layer base {
