@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gmb-gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A237E" />
+      <stop offset="1" stop-color="#00BFAE" />
+    </linearGradient>
+  </defs>
+  <!-- G (outer curve) -->
+  <path d="M16 32c0-8.837 7.163-16 16-16s16 7.163 16 16-7.163 16-16 16" stroke="url(#gmb-gradient)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- M (center) -->
+  <path d="M20 44V24l12 12 12-12v20" stroke="url(#gmb-gradient)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> 
