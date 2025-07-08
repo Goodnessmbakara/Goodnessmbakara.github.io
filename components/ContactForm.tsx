@@ -26,13 +26,29 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted!");
+    e.stopPropagation();
+
+    console.log("🚀 Form submission started");
+    console.log("📝 Form data:", formData);
+
+    // Validate form data
+    if (!formData.name || !formData.email || !formData.message) {
+      console.error("❌ Form validation failed - missing required fields");
+      setSubmitStatus("error");
+      setStatusMessage("Please fill in all required fields");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
+    setStatusMessage("");
 
     try {
+      console.log("📤 Sending POST request to /api/send-email");
+      console.log("📦 Request payload:", JSON.stringify(formData, null, 2));
+
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -41,21 +57,49 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      console.log("📥 Response received");
+      console.log("📊 Response status:", response.status);
+      console.log("📊 Response ok:", response.ok);
+      console.log(
+        "📊 Response headers:",
+        Object.fromEntries(response.headers.entries())
+      );
+
+      let data;
+      try {
+        data = await response.json();
+        console.log("📄 Response data:", data);
+      } catch (parseError) {
+        console.error("❌ Failed to parse response JSON:", parseError);
+        const textResponse = await response.text();
+        console.log("📄 Raw response text:", textResponse);
+        throw new Error("Invalid response format from server");
+      }
 
       if (response.ok) {
+        console.log("✅ Email sent successfully");
         setSubmitStatus("success");
-        setStatusMessage(data.message);
+        setStatusMessage(
+          data.message ||
+            "Message sent successfully! I'll get back to you soon."
+        );
         setFormData({ name: "", email: "", message: "" });
       } else {
+        console.error("❌ Email sending failed");
+        console.error("❌ Error details:", data);
         setSubmitStatus("error");
-        setStatusMessage(data.error || "Failed to send message");
+        setStatusMessage(
+          data.error || "Failed to send message. Please try again."
+        );
       }
     } catch (error) {
+      console.error("❌ Network or parsing error:", error);
       setSubmitStatus("error");
       setStatusMessage("Network error. Please try again.");
     } finally {
+      console.log("🏁 Form submission completed");
       setIsSubmitting(false);
+      // Clear status message after 5 seconds
       setTimeout(() => {
         setSubmitStatus("idle");
         setStatusMessage("");
@@ -65,7 +109,7 @@ export default function ContactForm() {
 
   return (
     <div className={contactStyles.card}>
-      <form onSubmit={handleSubmit} className={contactStyles.form}>
+      <form onSubmit={handleSubmit} className={contactStyles.form} noValidate>
         <div>
           <label className={contactStyles.label}>Name *</label>
           <input

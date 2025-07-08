@@ -19,10 +19,20 @@ import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 
 const featuredProjects = [
   {
+    name: "Kiipa",
+    description:
+      "Decentralized digital inheritance platform built on Lisk blockchain. Enables secure, transparent, and automated inheritance management with smart contracts and blockchain technology.",
+    liveUrl: "https://kiipa.vercel.app/",
+    githubUrl: "https://github.com/Goodnessmbakara/kiipa",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://kiipa.vercel.app/",
+  },
+  {
     name: "Medicore AI",
     description:
       "AI-powered healthcare platform for medical diagnosis and patient management. Integrates machine learning models for predictive healthcare analytics.",
     liveUrl: "https://medicore-ai.netlify.app/",
+    githubUrl: "https://github.com/Goodnessmbakara/medicore-ai",
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://medicore-ai.netlify.app/",
   },
@@ -31,6 +41,7 @@ const featuredProjects = [
     description:
       "Comprehensive insurance claim management platform with automated processing, fraud detection, and customer portal for seamless claim handling.",
     liveUrl: "https://claimclarity.vercel.app/",
+    githubUrl: "https://github.com/Goodnessmbakara/claimclarity",
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://claimclarity.vercel.app/",
   },

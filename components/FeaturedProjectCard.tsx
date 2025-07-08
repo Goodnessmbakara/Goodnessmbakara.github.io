@@ -45,34 +45,30 @@ export default function FeaturedProjectCard({
       <div className={styles.content}>
         <h3 className={styles.title}>{name}</h3>
         <p className={styles.desc}>{description}</p>
-        {liveUrl && (
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.button}
-          >
-            Visit{" "}
-            <ExternalLink
-              size={18}
-              style={{ marginLeft: 6, verticalAlign: "middle" }}
-            />
-          </a>
-        )}
-        {githubUrl && (
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.button}
-          >
-            View on GitHub{" "}
-            <Github
-              size={18}
-              style={{ marginLeft: 6, verticalAlign: "middle" }}
-            />
-          </a>
-        )}
+        <div className={styles.buttonGroup}>
+          {liveUrl && (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.primaryButton}
+            >
+              <ExternalLink size={16} />
+              Visit Live
+            </a>
+          )}
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.secondaryButton}
+            >
+              <Github size={16} />
+              View Code
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -4,37 +4,72 @@ import nodemailer from 'nodemailer';
 // Force dynamic rendering for this API route
 export const dynamic = 'force-dynamic';
 
+// Test endpoint to check if API is working
+export async function GET() {
+  console.log("🧪 GET request to email API - testing endpoint");
+  return NextResponse.json({
+    status: 'Email API is working',
+    timestamp: new Date().toISOString(),
+    env: {
+      GMAIL_USER: process.env.GMAIL_USER ? 'SET' : 'NOT SET',
+      GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? 'SET' : 'NOT SET'
+    }
+  });
+}
+
 export async function POST(request: NextRequest) {
+  console.log("📧 Email API route called");
+  console.log("📧 Request method:", request.method);
+  console.log("📧 Request headers:", Object.fromEntries(request.headers.entries()));
+  
   try {
-    const { name, email, message } = await request.json();
+    const body = await request.json();
+    console.log("📧 Request body received:", body);
+    
+    const { name, email, message } = body;
 
     // Validate required fields
     if (!name || !email || !message) {
+      console.error("❌ Validation failed - missing fields:", { name: !!name, email: !!email, message: !!message });
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
       );
     }
 
+    console.log("✅ Form validation passed");
+
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
+      console.error("❌ Email validation failed:", email);
       return NextResponse.json(
         { error: 'Invalid email format' },
         { status: 400 }
       );
     }
 
-    // Check if environment variables are set
+    console.log("✅ Email format validation passed");
+
+    // Check environment variables
+    console.log("🔍 Checking environment variables...");
+    console.log("🔍 GMAIL_USER exists:", !!process.env.GMAIL_USER);
+    console.log("🔍 GMAIL_APP_PASSWORD exists:", !!process.env.GMAIL_APP_PASSWORD);
+    
     if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
-      console.error('Gmail credentials not configured');
+      console.error('❌ Gmail credentials not configured');
+      console.error('❌ GMAIL_USER:', process.env.GMAIL_USER ? 'SET' : 'NOT SET');
+      console.error('❌ GMAIL_APP_PASSWORD:', process.env.GMAIL_APP_PASSWORD ? 'SET' : 'NOT SET');
       return NextResponse.json(
         { error: 'Email service not configured. Please contact the administrator.' },
         { status: 500 }
       );
     }
 
+    console.log("✅ Environment variables are configured");
+
     // Create Gmail SMTP transporter
+    console.log("🔧 Creating Gmail SMTP transporter...");
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -42,6 +77,8 @@ export async function POST(request: NextRequest) {
         pass: process.env.GMAIL_APP_PASSWORD,
       },
     });
+
+    console.log("✅ SMTP transporter created");
 
     // Email content
     const mailOptions = {
@@ -75,8 +112,23 @@ export async function POST(request: NextRequest) {
       replyTo: email, // Set reply-to to the sender's email
     };
 
+    console.log("📧 Mail options prepared:", {
+      from: mailOptions.from,
+      to: mailOptions.to,
+      subject: mailOptions.subject,
+      replyTo: mailOptions.replyTo
+    });
+
     // Send email
-    await transporter.sendMail(mailOptions);
+    console.log("📤 Attempting to send email...");
+    const result = await transporter.sendMail(mailOptions);
+    console.log("✅ Email sent successfully!");
+    console.log("📧 Send result:", {
+      messageId: result.messageId,
+      response: result.response,
+      accepted: result.accepted,
+      rejected: result.rejected
+    });
 
     return NextResponse.json(
       { 
@@ -87,7 +139,12 @@ export async function POST(request: NextRequest) {
     );
 
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('❌ Error sending email:', error);
+    console.error('❌ Error details:', {
+      name: error.name,
+      message: error.message,
+      stack: error.stack
+    });
     return NextResponse.json(
       { error: 'Failed to send message. Please try again.' },
       { status: 500 }

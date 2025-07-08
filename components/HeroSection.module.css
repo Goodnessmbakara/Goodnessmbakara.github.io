@@ -326,8 +326,85 @@
     flex-direction: column;
     gap: 2rem;
     min-height: 60vh;
+    padding: 2rem 0;
+  }
+  .heroContent {
+    text-align: center;
+    max-width: 100%;
+  }
+  .headline {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  .intro {
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+  }
+  .ctaGroup {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .primaryBtn, .secondaryBtn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
   }
   .profileCardWrap {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+  }
+  .profileCard {
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    max-width: 320px;
+  }
+  .profilePhoto {
+    width: 140px;
+    height: 140px;
+  }
+  .profilePhoto img {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroSection {
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+  }
+  .headline {
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
+  }
+  .intro {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .ctaGroup {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+  }
+  .primaryBtn, .secondaryBtn {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+  }
+  .profileCard {
+    padding: 1.5rem 1rem 1rem 1rem;
+    max-width: 280px;
+  }
+  .profilePhoto {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+  }
+  .profilePhoto img {
+    width: 110px;
+    height: 110px;
+  }
+  .profileFacts {
+    font-size: 0.9rem;
+  }
+  .highlight {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.8rem;
   }
 } 
