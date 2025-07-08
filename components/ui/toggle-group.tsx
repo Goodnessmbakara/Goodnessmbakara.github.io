@@ -13,8 +13,7 @@ const ToggleGroupContext = React.createContext<{
   variant: "default",
 });
 
-interface ToggleGroupProps
-  extends React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root> {
+interface ToggleGroupProps extends React.ComponentPropsWithoutRef<'div'> {
   variant?: string;
   size?: string;
 }
@@ -35,8 +34,7 @@ const ToggleGroup = React.forwardRef<
 ));
 ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;
 
-interface ToggleGroupItemProps
-  extends React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item> {
+interface ToggleGroupItemProps extends React.ComponentPropsWithoutRef<'button'> {
   variant?: string;
   size?: string;
 }
