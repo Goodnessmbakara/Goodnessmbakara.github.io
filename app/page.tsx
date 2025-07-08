@@ -93,9 +93,6 @@ export default function Home() {
                 className={styles.heroContent}
                 style={{ flex: 1, minWidth: 300 }}
               >
-                <div className={styles.logo}>
-                  <Logo size={80} />
-                </div>
                 <h1 className={styles.headline}>
                   Software Engineer & Blockchain Developer
                 </h1>

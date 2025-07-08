@@ -6,7 +6,8 @@ export default function ContactInfoCard() {
     <div className={contactStyles.infoCard}>
       <h3 className={contactStyles.infoTitle}>Let's Connect</h3>
       <p className={contactStyles.infoText}>
-        Whether you have a project in mind, want to collaborate, or just want to say hello, I'd love to hear from you.
+        Whether you have a project in mind, want to collaborate, or just want to
+        say hello, I'd love to hear from you.
       </p>
       <div className={contactStyles.socialLinks}>
         <a
@@ -19,13 +20,13 @@ export default function ContactInfoCard() {
           <span>Email</span>
         </a>
         <a
-          href="https://twitter.com/gooodnesmbakara"
+          href="https://twitter.com/goodnesmbakara"
           target="_blank"
           rel="noopener noreferrer"
           className={contactStyles.socialBtn}
         >
           <Twitter size={18} />
-          <span>@gooodnesmbakara</span>
+          <span>@goodnesmbakara</span>
         </a>
         <a
           href="https://github.com/Goodnessmbakara"
@@ -48,4 +49,4 @@ export default function ContactInfoCard() {
       </div>
     </div>
   );
-} 
+}
