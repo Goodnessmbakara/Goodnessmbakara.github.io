@@ -1,0 +1,51 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #1a237e;
+  cursor: pointer;
+}
+.toggle:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.toggle[data-state="on"] {
+  background: #e0f7fa;
+  color: #00bfaf;
+}
+
+.default {
+  background: transparent;
+}
+.outline {
+  border: 1.5px solid #e3e7f7;
+  background: transparent;
+}
+.outline:hover, .outline:focus {
+  background: #e0f7fa;
+  color: #00bfaf;
+  border-color: #00bfaf;
+}
+
+.size-default {
+  height: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.size-sm {
+  height: 2.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.size-lg {
+  height: 2.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+} 
