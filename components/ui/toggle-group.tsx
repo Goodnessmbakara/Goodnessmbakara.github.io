@@ -49,6 +49,13 @@ interface ToggleGroupItemProps
   size?: 'default' | 'sm' | 'lg';
 }
 
+function getVariant(val: unknown): 'default' | 'outline' {
+  return val === 'outline' ? 'outline' : 'default';
+}
+function getSize(val: unknown): 'default' | 'sm' | 'lg' {
+  return val === 'sm' || val === 'lg' ? val : 'default';
+}
+
 const ToggleGroupItem = React.forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Item>,
   ToggleGroupItemProps
@@ -59,8 +66,8 @@ const ToggleGroupItem = React.forwardRef<
       ref={ref}
       className={cn(
         toggleVariants({
-          variant: context.variant || variant,
-          size: context.size || size,
+          variant: getVariant(context.variant ?? variant),
+          size: getSize(context.size ?? size),
         }),
         className
       )}
