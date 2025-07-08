@@ -37,7 +37,7 @@ export default function Navbar() {
           <button onClick={() => scrollToSection("contact")}>Contact</button>
           <Button
             onClick={() =>
-              window.open("https://twitter.com/gooodnesmbakara", "_blank")
+              window.open("https://twitter.com/goodnesmbakara", "_blank")
             }
           >
             Connect <ExternalLink style={{ marginLeft: 6 }} size={16} />
@@ -63,7 +63,7 @@ export default function Navbar() {
           <button onClick={() => scrollToSection("contact")}>Contact</button>
           <Button
             onClick={() =>
-              window.open("https://twitter.com/gooodnesmbakara", "_blank")
+              window.open("https://twitter.com/goodnesmbakara", "_blank")
             }
           >
             Connect <ExternalLink style={{ marginLeft: 6 }} size={16} />
