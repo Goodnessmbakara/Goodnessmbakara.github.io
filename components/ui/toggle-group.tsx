@@ -43,17 +43,17 @@ const ToggleGroup = React.forwardRef<
 ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;
 
 interface ToggleGroupItemProps
-  extends React.ComponentPropsWithoutRef<'button'> {
+  extends React.ComponentPropsWithoutRef<"button"> {
   value: string;
-  variant?: 'default' | 'outline';
-  size?: 'default' | 'sm' | 'lg';
+  variant?: "default" | "outline";
+  size?: "default" | "sm" | "lg";
 }
 
-function getVariant(val: unknown): 'default' | 'outline' {
-  return val === 'outline' ? 'outline' : 'default';
+function getVariant(val: unknown): "default" | "outline" {
+  return val === "outline" ? "outline" : "default";
 }
-function getSize(val: unknown): 'default' | 'sm' | 'lg' {
-  return val === 'sm' || val === 'lg' ? val : 'default';
+function getSize(val: unknown): "default" | "sm" | "lg" {
+  return val === "sm" || val === "lg" ? val : "default";
 }
 
 const ToggleGroupItem = React.forwardRef<
