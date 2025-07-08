@@ -42,8 +42,8 @@ const ToggleGroup = React.forwardRef<
 ));
 ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;
 
-interface ToggleGroupItemProps
-  extends React.ComponentPropsWithoutRef<"button"> {
+interface ToggleGroupItemProps extends React.ComponentPropsWithoutRef<"button"> {
+  value: string;
   variant?: string;
   size?: string;
 }
