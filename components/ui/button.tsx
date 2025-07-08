@@ -9,6 +9,17 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
+// buttonVariants function for compatibility with other UI components
+export const buttonVariants = (props?: { variant?: string; size?: string }) => {
+  const variant = props?.variant || "default";
+  const size = props?.size || "default";
+
+  const variantClass = styles[variant] || "";
+  const sizeClass = styles[size] || "";
+
+  return `${styles.button} ${variantClass} ${sizeClass}`.trim();
+};
+
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
