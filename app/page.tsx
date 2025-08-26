@@ -19,6 +19,15 @@ import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 
 const featuredProjects = [
   {
+    name: "VoxCard",
+    description:
+      "Decentralized savings platform built on XION blockchain (CosmWasm). Enables users to create and manage rotating savings circles with smart contract security, gasless transactions, and partial payment support. Features user-created plans, emergency withdrawals, and treasury-backed gasless operations.",
+    liveUrl: "https://voxcard.vercel.app",
+    githubUrl: "https://github.com/Goodnessmbakara/voxcard",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://voxcard.vercel.app",
+  },
+  {
     name: "Kiipa",
     description:
       "Decentralized digital inheritance platform built on Lisk blockchain. Enables secure, transparent, and automated inheritance management with smart contracts and blockchain technology.",
