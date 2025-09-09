@@ -52,7 +52,7 @@ export default function AnimatedProfileCard() {
         ))}
         {/* Profile Photo */}
         <div className={styles.profilePhoto}>
-          <img src="/myphoto.jpg" alt="Goodness Mbakara" />
+          <img src="/myprofilephoto.jpg" alt="Goodness Mbakara" />
         </div>
         {/* Name & Title */}
         <div
