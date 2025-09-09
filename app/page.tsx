@@ -61,6 +61,15 @@ const featuredProjects = [
     githubUrl: "https://github.com/Goodnessmbakara/solana-fellowship-server",
   },
   {
+    name: "NeonFlash",
+    description:
+      "Advanced cross-chain arbitrage platform built on Neon EVM composability. Features flash loan integration with Aave, multi-strategy arbitrage (Orca, Raydium, Jupiter), and real-time analytics. Recognized as 2nd best product in Neon EVM bootcamp with comprehensive testing and MetaMask integration.",
+    liveUrl: "https://neonflash.vercel.app/",
+    githubUrl: "https://github.com/Goodnessmbakara/neonflash",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://neonflash.vercel.app/",
+  },
+  {
     name: "Neon Aave Flash Loan",
     description:
       "Cross-chain flash loan implementation using Neon EVM and Aave protocol. Enables arbitrage opportunities across different blockchain networks.",
