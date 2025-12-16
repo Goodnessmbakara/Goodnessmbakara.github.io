@@ -16,7 +16,7 @@ export default function AnimatedProfileCard() {
   ];
 
   const achievements = [
-    "4X Hackathon Winner",
+    "7X Hackathon Winner",
     "Team Leader (30+ Engineers)",
     "CS Grad",
     "Blockchain Developer",

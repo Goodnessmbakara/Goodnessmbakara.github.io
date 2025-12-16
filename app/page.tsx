@@ -19,6 +19,22 @@ import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 
 const featuredProjects = [
   {
+    name: "Bucx",
+    description:
+      "Borderless banking solution powered by stablecoins. Open virtual USD accounts, receive payments instantly, and spend globally with your virtual card. Built to make banking borderless for professionals in Africa.",
+    liveUrl: "https://www.bucx.app/",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://www.bucx.app/",
+  },
+  {
+    name: "YouSpeak",
+    description:
+      "Speak, Learn and Live the Language. Join a global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors.",
+    liveUrl: "https://you-speak.vercel.app/",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://you-speak.vercel.app/",
+  },
+  {
     name: "VoxCard",
     description:
       "Decentralized savings platform built on XION blockchain (CosmWasm). Enables users to create and manage rotating savings circles with smart contract security, gasless transactions, and partial payment support. Features user-created plans, emergency withdrawals, and treasury-backed gasless operations.",
@@ -59,21 +75,6 @@ const featuredProjects = [
     description:
       "Rust-based Solana development server for keypair generation, SPL token operations, message signing, and more. Selected for Superdevs Academy (Top 400/5000+).",
     githubUrl: "https://github.com/Goodnessmbakara/solana-fellowship-server",
-  },
-  {
-    name: "NeonFlash",
-    description:
-      "Advanced cross-chain arbitrage platform built on Neon EVM composability. Features flash loan integration with Aave, multi-strategy arbitrage (Orca, Raydium, Jupiter), and real-time analytics. Recognized as 2nd best product in Neon EVM bootcamp with comprehensive testing and MetaMask integration.",
-    liveUrl: "https://neonflash.vercel.app/",
-    githubUrl: "https://github.com/Goodnessmbakara/neonflash",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://neonflash.vercel.app/",
-  },
-  {
-    name: "Neon Aave Flash Loan",
-    description:
-      "Cross-chain flash loan implementation using Neon EVM and Aave protocol. Enables arbitrage opportunities across different blockchain networks.",
-    githubUrl: "https://github.com/Goodnessmbakara/neon-aave-loan",
   },
 ];
 
