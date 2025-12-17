@@ -30,9 +30,9 @@ const featuredProjects = [
     name: "YouSpeak",
     description:
       "Speak, Learn and Live the Language. Join a global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors.",
-    liveUrl: "https://you-speak.vercel.app/",
+    liveUrl: "https://youspeakhq.com",
     fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://you-speak.vercel.app/",
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://youspeakhq.com",
   },
   {
     name: "VoxCard",
