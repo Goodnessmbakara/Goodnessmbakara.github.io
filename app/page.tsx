@@ -19,6 +19,14 @@ import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 
 const featuredProjects = [
   {
+    name: "AliveHome",
+    description:
+      "Nigeria's first AI-powered real estate ecosystem designed to reduce fraud and improve transparency. Features verified listings, secure communication, and virtual tours.",
+    liveUrl: "https://alivehome.co",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://alivehome.co",
+  },
+  {
     name: "Bucx",
     description:
       "Borderless banking solution powered by stablecoins. Open virtual USD accounts, receive payments instantly, and spend globally with your virtual card. Built to make banking borderless for professionals in Africa.",
