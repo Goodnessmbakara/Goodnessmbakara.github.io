@@ -290,11 +290,11 @@ export default function Home() {
                     <div className={experienceStyles.dot}></div>
                     <span>
                       Defined technical architecture and led product development
-                      from zero to launch
+                      from zero
                     </span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>2025 — Present</div>
+                <div className={experienceStyles.text}>Mar 2026 — Present</div>
               </div>
 
               {/* Team Lead — HngX */}
