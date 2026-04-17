@@ -20,7 +20,8 @@
 .heroBackgroundText {
   position: absolute;
   bottom: 8%;
-  left: -2%;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-display);
   font-weight: 400;
   font-style: italic;
@@ -98,9 +99,9 @@
 }
 
 .primaryBtn {
-  background: var(--text-primary);
-  color: #fff;
-  border: none;
+  background: #fff;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
   border-radius: 3px;
   padding: 0.8125rem 2rem;
   font-size: 0.9375rem;
@@ -111,13 +112,13 @@
 }
 
 .primaryBtn:hover {
-  background: var(--accent);
+  border-color: var(--text-primary);
 }
 
 .secondaryBtn {
-  background: none;
-  color: var(--text-primary);
-  border: 1.5px solid var(--border);
+  background: var(--accent);
+  color: #fff;
+  border: none;
   border-radius: 3px;
   padding: 0.8125rem 2rem;
   font-size: 0.9375rem;
@@ -128,7 +129,7 @@
 }
 
 .secondaryBtn:hover {
-  border-color: var(--text-primary);
+  background: var(--accent-hover);
 }
 
 /* ===== Responsive ===== */
@@ -144,7 +145,7 @@
     font-size: 1rem;
   }
   .heroBackgroundText {
-    font-size: 24vw;
+    font-size: 22vw;
     -webkit-text-stroke: 1px #e0e0e0;
   }
 }
@@ -166,7 +167,10 @@
     text-align: center;
   }
   .heroBackgroundText {
-    font-size: 28vw;
+    font-size: 20vw;
+    bottom: 5%;
+    -webkit-text-stroke: 0.8px #e0e0e0;
+    letter-spacing: -0.01em;
   }
   .heroBackground {
     background-size: 20px 20px;
