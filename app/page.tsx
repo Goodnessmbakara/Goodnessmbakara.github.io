@@ -73,16 +73,7 @@ const featuredProjects = [
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://medicore-ai.netlify.app/",
   },
-  {
-    name: "ClaimClarity",
-    description:
-      "Insurance claim management platform with automated processing, fraud detection, and customer portal for seamless claim handling.",
-    liveUrl: "https://claimclarity.vercel.app/",
-    githubUrl: "https://github.com/Goodnessmbakara/claimclarity",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://claimclarity.vercel.app/",
-  },
-  {
+{
     name: "Solana Fellowship Server",
     description:
       "Rust-based Solana development server for keypair generation, SPL token operations, and message signing. Selected for Superdevs Academy (Top 400/5000+).",
