@@ -4,10 +4,10 @@ import contactStyles from "./ContactSection.module.css";
 export default function ContactInfoCard() {
   return (
     <div className={contactStyles.infoCard}>
-      <h3 className={contactStyles.infoTitle}>Let's Connect</h3>
+      <h3 className={contactStyles.infoTitle}>Don't be a stranger.</h3>
       <p className={contactStyles.infoText}>
-        Whether you have a project in mind, want to collaborate, or just want to
-        say hello — I'd love to hear from you.
+        Startups, protocols, open source — if it ships and it matters, I'm
+        interested. Reach out anywhere.
       </p>
       <div className={contactStyles.socialLinks}>
         <a

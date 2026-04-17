@@ -118,14 +118,15 @@ export default function Home() {
               }}
             >
               <div className={styles.heroContent}>
-                <span className={styles.overline}>Software Engineer</span>
+                <span className={styles.overline}>Software Engineer & Builder</span>
                 <h1 className={styles.headline}>
-                  Building products that matter
+                  Ship it. Then ship the next one.
                 </h1>
                 <p className={styles.intro}>
-                  I design and build scalable applications and blockchain
-                  solutions. Focused on Web3, DeFi, and technology that creates
-                  real impact.
+                  The gap between an idea and a product is discipline. I close
+                  that gap — with code, with teams, with deadlines that don't
+                  bend. Seven hackathons won. Thirty engineers led. Products
+                  people actually use.
                 </p>
                 <div className={styles.ctaGroup}>
                   <button
@@ -161,16 +162,17 @@ export default function Home() {
           <div className={layoutStyles.container}>
             <div className={projectsStyles.header}>
               <div className={projectsStyles.sectionLabel}>Work</div>
-              <h2>Featured Projects</h2>
+              <h2>Proof of work. Not proof of concept.</h2>
               <p
                 style={{
                   color: "var(--text-secondary)",
-                  maxWidth: 520,
+                  maxWidth: 560,
                   marginTop: "1rem",
                 }}
               >
-                A selection of projects across blockchain, fintech, and
-                healthcare
+                Every project here is live. Real users, real problems, real
+                stakes. Payments in Solana. Real estate in Lagos. Savings
+                circles on-chain. This is what shipping looks like.
               </p>
             </div>
             <div
@@ -197,15 +199,17 @@ export default function Home() {
           <div className={layoutStyles.container}>
             <div className={experienceStyles.header}>
               <div className={experienceStyles.sectionLabel}>Experience</div>
-              <h2>Where I've Worked</h2>
+              <h2>You learn by building. I built a lot.</h2>
               <p
                 style={{
                   color: "var(--text-secondary)",
-                  maxWidth: 480,
+                  maxWidth: 520,
                   marginTop: "1rem",
                 }}
               >
-                From backend development to leading engineering teams
+                No one hands you a team of thirty. You earn it by shipping when
+                others are still planning. Every role here taught me something
+                lectures never could.
               </p>
             </div>
 
@@ -309,7 +313,7 @@ export default function Home() {
           <div className={layoutStyles.container}>
             <div className={contactStyles.header}>
               <div className={contactStyles.sectionLabel}>Contact</div>
-              <h2>Get In Touch</h2>
+              <h2>Your move.</h2>
               <p
                 style={{
                   color: "var(--text-secondary)",
@@ -317,7 +321,8 @@ export default function Home() {
                   marginTop: "1rem",
                 }}
               >
-                Open to new opportunities, collaborations, or just a conversation about technology
+                I build things with people who care about the outcome. If that
+                sounds like you, let's talk.
               </p>
             </div>
 
