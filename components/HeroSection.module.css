@@ -236,6 +236,7 @@
     flex-direction: column;
     width: 100%;
     gap: 0.75rem;
+    margin-top: 2.5rem;
   }
   .primaryBtn,
   .secondaryBtn {
@@ -265,8 +266,8 @@
     opacity: 0.85;
   }
   .heroBackground {
-    background-size: 32px 32px;
-    background-image: radial-gradient(circle, #ececec 0.8px, transparent 0.8px);
+    background-image: none;
+    background-color: #ffffff;
   }
 }
 
