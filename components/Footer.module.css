@@ -1,15 +1,12 @@
 .footer {
-  background: #1a237e;
-  color: #fff;
-  padding: 2.5rem 0 1.5rem 0;
-  text-align: center;
-  font-size: 1rem;
-  margin-top: 4rem;
-  border-radius: 1.25rem 1.25rem 0 0;
-  box-shadow: 0 -2px 16px rgba(26,35,126,0.10);
+  background: var(--text-primary);
+  color: rgba(255, 255, 255, 0.5);
+  padding: 3rem 1.5rem;
+  font-size: 0.875rem;
 }
+
 .footerContent {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -17,15 +14,18 @@
   flex-wrap: wrap;
   gap: 1.5rem;
 }
+
 .footerBrand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
 }
+
 @media (max-width: 700px) {
   .footerContent {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
-} 
+}

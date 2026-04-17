@@ -1,298 +1,186 @@
+/* ===== Parallax Background ===== */
+.heroBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  background: var(--bg);
+  animation: slideOut linear;
+  animation-timeline: scroll(block nearest);
+  animation-range: 0 60vh;
+  animation-fill-mode: both;
+}
+
+.heroBackgroundText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12vw;
+  color: #f0f0f0;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.heroBackgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.06;
+  filter: grayscale(1);
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(40%);
+  }
+}
+
+/* Fallback for browsers without scroll-timeline */
+@supports not (animation-timeline: scroll()) {
+  .heroBackground {
+    animation: none;
+  }
+}
+
+/* ===== Hero Section ===== */
 .heroSection {
   position: relative;
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  min-height: 70vh;
-  background: linear-gradient(120deg, #e0f7fa 0%, #f8fafc 60%, #e3e9ff 100%);
-  background-size: 200% 200%;
-  animation: heroGradientMove 12s ease-in-out infinite;
-  gap: 3rem;
-  padding: 3rem 0;
-  opacity: 0;
-  animation-name: heroFadeIn, heroGradientMove;
-  animation-duration: 1.2s, 12s;
-  animation-delay: 0.1s, 0s;
-  animation-fill-mode: forwards, infinite;
-}
-
-.heroSection::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.18;
-  background: url('data:image/svg+xml;utf8,<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.5"><rect x="0" y="0" width="400" height="400" fill="none"/><path d="M0 100h400M0 200h400M0 300h400M100 0v400M200 0v400M300 0v400" stroke="%231a237e" stroke-width="1.5" stroke-dasharray="8 8"/></g></svg>');
-  background-size: 200px 200px;
-  background-repeat: repeat;
-}
-
-/* Ensure content is above the overlay */
-.heroSection > * {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes heroFadeIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: none; }
-}
-
-@keyframes heroGradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  padding: 8rem 0 6rem;
 }
 
 .heroContent {
-  flex: 1;
-  min-width: 300px;
-  text-align: left;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 640px;
 }
 
-.logo {
-  margin-bottom: 2rem;
+.overline {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 .headline {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #1a237e;
-  margin-bottom: 1.2rem;
-  letter-spacing: -1px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 4.5rem;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
 }
 
 .intro {
-  font-size: 1.25rem;
-  color: #374151;
-  margin-bottom: 2.2rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
 }
 
 .ctaGroup {
   display: flex;
   gap: 1rem;
-  margin-top: 1.5rem;
+  align-items: center;
 }
 
 .primaryBtn {
-  background: linear-gradient(90deg, #1a237e 0%, #00bfaf 100%);
+  background: var(--text-primary);
   color: #fff;
   border: none;
-  border-radius: 0.5rem;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: 3px;
+  padding: 0.8125rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: var(--font-body);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(26,35,126,0.08);
   transition: background 0.2s;
 }
+
 .primaryBtn:hover {
-  background: linear-gradient(90deg, #00bfaf 0%, #1a237e 100%);
+  background: var(--accent);
 }
 
 .secondaryBtn {
-  background: #fff;
-  color: #1a237e;
-  border: 2px solid #1a237e;
-  border-radius: 0.5rem;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
+  background: none;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+  border-radius: 3px;
+  padding: 0.8125rem 2rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: var(--font-body);
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(26,35,126,0.04);
-  transition: background 0.2s, color 0.2s;
-}
-.secondaryBtn:hover {
-  background: #1a237e;
-  color: #fff;
+  transition: border-color 0.2s, color 0.2s;
 }
 
+.secondaryBtn:hover {
+  border-color: var(--text-primary);
+}
+
+/* ===== Profile Card (Simplified) ===== */
 .profileCardWrap {
   flex: 1;
-  min-width: 320px;
+  min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-}
-
-.profileCardWrap::before,
-.profileCardWrap::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: linear-gradient(45deg, #00bfaf, #1a237e);
-  border-radius: 50%;
-  animation: particleFloat 8s linear infinite;
-  opacity: 0.6;
-}
-
-.profileCardWrap::before {
-  top: 20%;
-  left: 15%;
-  animation-delay: 0s;
-}
-
-.profileCardWrap::after {
-  bottom: 30%;
-  right: 20%;
-  animation-delay: 4s;
-}
-
-@keyframes particleFloat {
-  0% {
-    transform: translateY(0px) translateX(0px);
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-30px) translateX(20px);
-    opacity: 0.6;
-  }
-  75% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(-60px) translateX(40px);
-    opacity: 0;
-  }
 }
 
 .profileCard {
-  position: relative;
-  background: #fff;
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px rgba(26,35,126,0.10);
-  padding: 2.5rem 2rem 2rem 2rem;
-  max-width: 350px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 2.5rem 2rem 2rem;
+  max-width: 320px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
-  overflow: visible;
-  animation: profileFloat 6s ease-in-out infinite;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-@keyframes profileFloat {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-    box-shadow: 0 8px 32px rgba(26,35,126,0.10);
-  }
-  25% {
-    transform: translateY(-8px) rotate(0.5deg);
-    box-shadow: 0 16px 40px rgba(26,35,126,0.15);
-  }
-  50% {
-    transform: translateY(-4px) rotate(-0.3deg);
-    box-shadow: 0 12px 36px rgba(26,35,126,0.12);
-  }
-  75% {
-    transform: translateY(-12px) rotate(0.2deg);
-    box-shadow: 0 20px 44px rgba(26,35,126,0.18);
-  }
-}
-
-.floatingIcon {
-  position: absolute;
-  background: #fff;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(26,35,126,0.08);
-  padding: 0.3rem;
-  z-index: 2;
-  animation: iconFloat 4s ease-in-out infinite;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.floatingIcon:nth-child(1) { animation-delay: 0s; }
-.floatingIcon:nth-child(2) { animation-delay: 1s; }
-.floatingIcon:nth-child(3) { animation-delay: 2s; }
-.floatingIcon:nth-child(4) { animation-delay: 3s; }
-
-@keyframes iconFloat {
-  0%, 100% {
-    transform: translateY(0px) scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translateY(-15px) scale(1.1);
-    opacity: 1;
-  }
+  text-align: center;
 }
 
 .profilePhoto {
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1a237e 0%, #00bfaf 100%);
-  padding: 5px;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 8px 24px rgba(26,35,126,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: photoGlow 4s ease-in-out infinite;
-  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  border: 2px solid var(--border);
 }
 
-.profilePhoto::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #00bfaf, #1a237e, #00bfaf);
-  background-size: 200% 200%;
-  animation: borderGlow 3s ease-in-out infinite;
-  z-index: -1;
-  opacity: 0.3;
-}
-
-.profilePhoto:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 32px rgba(26,35,126,0.20);
-}
-
-@keyframes photoGlow {
-  0%, 100% {
-    box-shadow: 0 8px 24px rgba(26,35,126,0.15);
-  }
-  50% {
-    box-shadow: 0 12px 32px rgba(26,35,126,0.25), 0 0 20px rgba(0,191,175,0.3);
-  }
-}
-
-@keyframes borderGlow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
 .profilePhoto img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center 30%;
-  border: 4px solid #fff;
-  transform: scale(1.15);
+}
+
+.profileFacts {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin-bottom: 0.25rem;
 }
 
 .profileHighlights {
-  margin: 1rem 0 0.5rem 0;
+  margin: 0.75rem 0 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -300,111 +188,54 @@
 }
 
 .highlight {
-  background: #e0f7fa;
-  color: #1a237e;
-  border-radius: 999px;
-  padding: 0.3rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  box-shadow: 0 1px 4px rgba(26,35,126,0.06);
-  animation: highlightFadeIn 0.7s;
-}
-@keyframes highlightFadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
 }
 
-.profileFacts {
-  color: #374151;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
+/* ===== Responsive ===== */
 @media (max-width: 900px) {
   .heroSection {
-    flex-direction: column;
-    gap: 2rem;
-    min-height: 60vh;
-    padding: 2rem 0;
-  }
-  .heroContent {
-    text-align: center;
-    max-width: 100%;
+    min-height: auto;
+    padding: 7rem 0 4rem;
   }
   .headline {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+    font-size: 2.75rem;
   }
   .intro {
-    font-size: 1.1rem;
-    margin-bottom: 1.8rem;
-  }
-  .ctaGroup {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .primaryBtn, .secondaryBtn {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.95rem;
-  }
-  .profileCardWrap {
-    margin-top: 1.5rem;
+    font-size: 1rem;
   }
   .profileCard {
-    padding: 2rem 1.5rem 1.5rem 1.5rem;
-    max-width: 320px;
-  }
-  .profilePhoto {
-    width: 140px;
-    height: 140px;
-  }
-  .profilePhoto img {
-    width: 130px;
-    height: 130px;
+    max-width: 280px;
+    padding: 2rem 1.5rem 1.5rem;
   }
 }
 
 @media (max-width: 600px) {
   .heroSection {
-    padding: 1.5rem 0;
-    gap: 1.5rem;
+    padding: 6rem 0 3rem;
   }
   .headline {
-    font-size: 1.8rem;
-    letter-spacing: -0.5px;
-  }
-  .intro {
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 2.25rem;
   }
   .ctaGroup {
     flex-direction: column;
-    gap: 0.8rem;
     width: 100%;
   }
-  .primaryBtn, .secondaryBtn {
+  .primaryBtn,
+  .secondaryBtn {
     width: 100%;
-    padding: 0.8rem 1.5rem;
+    text-align: center;
   }
-  .profileCard {
-    padding: 1.5rem 1rem 1rem 1rem;
-    max-width: 280px;
+  .heroBackgroundText {
+    font-size: 20vw;
   }
   .profilePhoto {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 1rem;
+    width: 100px;
+    height: 100px;
   }
-  .profilePhoto img {
-    width: 110px;
-    height: 110px;
-  }
-  .profileFacts {
-    font-size: 0.9rem;
-  }
-  .highlight {
-    font-size: 0.8rem;
-    padding: 0.25rem 0.8rem;
-  }
-} 
+}

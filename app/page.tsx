@@ -1,16 +1,12 @@
 "use client";
+
 import AnimatedProfileCard from "@/components/AnimatedProfileCard";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Menu, X, ExternalLink, Github, Twitter, Linkedin } from "lucide-react";
-import { useState } from "react";
-import Logo from "../components/Logo";
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import styles from "../components/HeroSection.module.css";
 import layoutStyles from "../components/Layout.module.css";
 import experienceStyles from "../components/ExperienceSection.module.css";
 import projectsStyles from "../components/ProjectsSection.module.css";
 import contactStyles from "../components/ContactSection.module.css";
-import footerStyles from "../components/Footer.module.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
@@ -18,6 +14,14 @@ import ContactInfoCard from "@/components/ContactInfoCard";
 import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 
 const featuredProjects = [
+  {
+    name: "Tilt Pay",
+    description:
+      "Mobile payment app built on Solana blockchain. Instant, secure payments — online, in-store or peer-to-peer. No hardware costs, no hidden fees, just 1% on tap-to-pay. Supports universal currency with zero-fee transfers.",
+    liveUrl: "https://tilt-pay.com",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://tilt-pay.com",
+  },
   {
     name: "AliveHome",
     description:
@@ -29,7 +33,7 @@ const featuredProjects = [
   {
     name: "Bucx",
     description:
-      "Borderless banking solution powered by stablecoins. Open virtual USD accounts, receive payments instantly, and spend globally with your virtual card. Built to make banking borderless for professionals in Africa.",
+      "Borderless banking solution powered by stablecoins. Open virtual USD accounts, receive payments instantly, and spend globally with your virtual card.",
     liveUrl: "https://www.bucx.app/",
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://www.bucx.app/",
@@ -37,7 +41,7 @@ const featuredProjects = [
   {
     name: "YouSpeak",
     description:
-      "Speak, Learn and Live the Language. Join a global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors.",
+      "Speak, Learn and Live the Language. A global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors.",
     liveUrl: "https://youspeakhq.com",
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://youspeakhq.com",
@@ -45,7 +49,7 @@ const featuredProjects = [
   {
     name: "VoxCard",
     description:
-      "Decentralized savings platform built on XION blockchain (CosmWasm). Enables users to create and manage rotating savings circles with smart contract security, gasless transactions, and partial payment support. Features user-created plans, emergency withdrawals, and treasury-backed gasless operations.",
+      "Decentralized savings platform built on XION blockchain. Enables users to create and manage rotating savings circles with smart contract security and gasless transactions.",
     liveUrl: "https://voxcard.vercel.app",
     githubUrl: "https://github.com/Goodnessmbakara/voxcard",
     fallbackImageUrl:
@@ -54,7 +58,7 @@ const featuredProjects = [
   {
     name: "Kiipa",
     description:
-      "Decentralized digital inheritance platform built on Lisk blockchain. Enables secure, transparent, and automated inheritance management with smart contracts and blockchain technology.",
+      "Decentralized digital inheritance platform built on Lisk blockchain. Enables secure, transparent, and automated inheritance management with smart contracts.",
     liveUrl: "https://kiipa.vercel.app/",
     githubUrl: "https://github.com/Goodnessmbakara/kiipa",
     fallbackImageUrl:
@@ -72,7 +76,7 @@ const featuredProjects = [
   {
     name: "ClaimClarity",
     description:
-      "Comprehensive insurance claim management platform with automated processing, fraud detection, and customer portal for seamless claim handling.",
+      "Insurance claim management platform with automated processing, fraud detection, and customer portal for seamless claim handling.",
     liveUrl: "https://claimclarity.vercel.app/",
     githubUrl: "https://github.com/Goodnessmbakara/claimclarity",
     fallbackImageUrl:
@@ -81,52 +85,47 @@ const featuredProjects = [
   {
     name: "Solana Fellowship Server",
     description:
-      "Rust-based Solana development server for keypair generation, SPL token operations, message signing, and more. Selected for Superdevs Academy (Top 400/5000+).",
+      "Rust-based Solana development server for keypair generation, SPL token operations, and message signing. Selected for Superdevs Academy (Top 400/5000+).",
     githubUrl: "https://github.com/Goodnessmbakara/solana-fellowship-server",
   },
 ];
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false);
   };
 
   return (
     <>
-      <div className="test-bg text-center">
-        TEST: Tailwind custom class is working!
+      {/* Parallax Background */}
+      <div className={styles.heroBackground}>
+        <div className={styles.heroBackgroundText}>GOODNESS</div>
       </div>
+
       <div className={layoutStyles.body}>
-        {/* Navigation */}
         <Navbar />
 
         {/* Hero Section */}
-        <section id="hero" className={layoutStyles.sectionPadding}>
+        <section id="hero" className={styles.heroSection}>
           <div className={layoutStyles.container}>
             <div
               style={{
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "center",
-                justifyContent: "center",
-                gap: "3rem",
+                gap: "4rem",
               }}
             >
-              <div
-                className={styles.heroContent}
-                style={{ flex: 1, minWidth: 300 }}
-              >
+              <div className={styles.heroContent}>
+                <span className={styles.overline}>Software Engineer</span>
                 <h1 className={styles.headline}>
-                  Software Engineer & Blockchain Developer
+                  Building products that matter
                 </h1>
                 <p className={styles.intro}>
-                  I build scalable applications and innovative blockchain
-                  solutions. Passionate about Web3, DeFi, and creating impactful
-                  technology.
+                  I design and build scalable applications and blockchain
+                  solutions. Focused on Web3, DeFi, and technology that creates
+                  real impact.
                 </p>
                 <div className={styles.ctaGroup}>
                   <button
@@ -146,7 +145,7 @@ export default function Home() {
               <div
                 style={{
                   flex: 1,
-                  minWidth: 320,
+                  minWidth: 300,
                   display: "flex",
                   justifyContent: "center",
                 }}
@@ -161,19 +160,26 @@ export default function Home() {
         <section id="projects" className={layoutStyles.sectionPadding}>
           <div className={layoutStyles.container}>
             <div className={projectsStyles.header}>
-              <h2 className="text-gradient-primary mb-4">Featured Projects</h2>
-              <p className="text-neutral-600 max-w-2xl mx-auto">
-                A selection of my most impactful work in blockchain, DeFi, and
-                software development
+              <div className={projectsStyles.sectionLabel}>Work</div>
+              <h2>Featured Projects</h2>
+              <p
+                style={{
+                  color: "var(--text-secondary)",
+                  maxWidth: 520,
+                  marginTop: "1rem",
+                }}
+              >
+                A selection of projects across blockchain, fintech, and
+                healthcare
               </p>
             </div>
             <div
               style={{
-                maxWidth: 950,
+                maxWidth: 960,
                 margin: "0 auto",
                 display: "flex",
                 flexDirection: "column",
-                gap: "2.5rem",
+                gap: "1.5rem",
               }}
             >
               {featuredProjects.map((project, idx) => (
@@ -186,34 +192,33 @@ export default function Home() {
         {/* Experience Section */}
         <section
           id="experience"
-          className={
-            layoutStyles.sectionPadding + " " + experienceStyles.bgExperience
-          }
+          className={`${layoutStyles.sectionPadding} ${experienceStyles.bgExperience}`}
         >
           <div className={layoutStyles.container}>
             <div className={experienceStyles.header}>
-              <h2 className="text-gradient-primary mb-4">
-                Professional Experience
-              </h2>
-              <p className="text-neutral-600 max-w-2xl mx-auto">
-                My journey in software engineering, from backend development to
-                team leadership
+              <div className={experienceStyles.sectionLabel}>Experience</div>
+              <h2>Where I've Worked</h2>
+              <p
+                style={{
+                  color: "var(--text-secondary)",
+                  maxWidth: 480,
+                  marginTop: "1rem",
+                }}
+              >
+                From backend development to leading engineering teams
               </p>
             </div>
 
             <div className={experienceStyles.grid}>
-              {/* Team Lead & Backend Engineer – HngX */}
               <div className={experienceStyles.card}>
                 <div className={experienceStyles.flex}>
                   <div>
-                    <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                      Team Lead & Backend Engineer
-                    </h3>
-                    <div className="text-accent-950 font-medium mb-2">HngX</div>
+                    <h3>Team Lead & Backend Engineer</h3>
+                    <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>
+                      HngX
+                    </div>
                   </div>
-                  <Badge className="bg-accent-100 text-accent-950 border-accent-200">
-                    Leadership
-                  </Badge>
+                  <span className={experienceStyles.badge}>Leadership</span>
                 </div>
                 <ul className={experienceStyles.list}>
                   <li className={experienceStyles.flex}>
@@ -236,23 +241,18 @@ export default function Home() {
                     </span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>Sep 2023 - Oct 2023</div>
+                <div className={experienceStyles.text}>Sep 2023 — Oct 2023</div>
               </div>
 
-              {/* Full Stack Developer – ZIDIO */}
               <div className={experienceStyles.card}>
                 <div className={experienceStyles.flex}>
                   <div>
-                    <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                      Full Stack Developer
-                    </h3>
-                    <div className="text-primary-950 font-medium mb-2">
+                    <h3>Full Stack Developer</h3>
+                    <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>
                       ZIDIO
                     </div>
                   </div>
-                  <Badge className="bg-primary-100 text-primary-950 border-primary-200">
-                    Full Stack
-                  </Badge>
+                  <span className={experienceStyles.badge}>Full Stack</span>
                 </div>
                 <ul className={experienceStyles.list}>
                   <li className={experienceStyles.flex}>
@@ -270,23 +270,18 @@ export default function Home() {
                     <span>Designed MongoDB schemas for dynamic listings</span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>Aug 2024 - Nov 2024</div>
+                <div className={experienceStyles.text}>Aug 2024 — Nov 2024</div>
               </div>
 
-              {/* Backend Engineer – ALX */}
               <div className={experienceStyles.card}>
                 <div className={experienceStyles.flex}>
                   <div>
-                    <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                      Backend Engineer
-                    </h3>
-                    <div className="text-neutral-700 font-medium mb-2">
+                    <h3>Backend Engineer</h3>
+                    <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>
                       African Leaders X (ALX)
                     </div>
                   </div>
-                  <Badge className="bg-neutral-100 text-neutral-700 border-neutral-200">
-                    Backend
-                  </Badge>
+                  <span className={experienceStyles.badge}>Backend</span>
                 </div>
                 <ul className={experienceStyles.list}>
                   <li className={experienceStyles.flex}>
@@ -300,7 +295,7 @@ export default function Home() {
                     <span>Integrated caching for enhanced performance</span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>Jun 2022 - May 2023</div>
+                <div className={experienceStyles.text}>Jun 2022 — May 2023</div>
               </div>
             </div>
           </div>
@@ -309,16 +304,20 @@ export default function Home() {
         {/* Contact Section */}
         <section
           id="contact"
-          className={
-            layoutStyles.sectionPadding + " " + contactStyles.bgContact
-          }
+          className={`${layoutStyles.sectionPadding} ${contactStyles.bgContact}`}
         >
           <div className={layoutStyles.container}>
             <div className={contactStyles.header}>
-              <h2 className="text-gradient-primary mb-4">Get In Touch</h2>
-              <p className="text-neutral-600 max-w-2xl mx-auto">
-                I'm always open to discussing new opportunities, collaborations,
-                or just having a chat about technology
+              <div className={contactStyles.sectionLabel}>Contact</div>
+              <h2>Get In Touch</h2>
+              <p
+                style={{
+                  color: "var(--text-secondary)",
+                  maxWidth: 480,
+                  marginTop: "1rem",
+                }}
+              >
+                Open to new opportunities, collaborations, or just a conversation about technology
               </p>
             </div>
 
@@ -329,7 +328,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Footer */}
         <Footer />
       </div>
     </>

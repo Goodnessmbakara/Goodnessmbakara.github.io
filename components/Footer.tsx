@@ -6,16 +6,13 @@ export default function Footer() {
     <footer className={footerStyles.footer}>
       <div className={footerStyles.footerContent}>
         <div className={footerStyles.footerBrand}>
-          <Logo size={32} />
-          <div>
-            <div style={{ fontWeight: 600, fontSize: "1.1rem" }}>Goodness Mbakara</div>
-            <div style={{ fontSize: "0.85rem", color: "#e0e7ff" }}>Software Engineer</div>
-          </div>
+          <Logo size={28} color="rgba(255,255,255,0.6)" />
+          <span>Goodness Mbakara</span>
         </div>
-        <div style={{ fontSize: "0.95rem", opacity: 0.85 }}>
-          © 2024 Goodness Mbakara. All rights reserved.
+        <div>
+          &copy; {new Date().getFullYear()} All rights reserved.
         </div>
       </div>
     </footer>
   );
-} 
+}

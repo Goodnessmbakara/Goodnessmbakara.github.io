@@ -1,29 +1,27 @@
 import "./global-styles.css";
-// import "./globals.css";
-import "../components/Layout.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Goodness E. Mbakara - Computer Science Graduate & Team Leader",
+  title: "Goodness Mbakara — Software Engineer",
   description:
-    "Computer Science graduate and dynamic backend engineer with proven track record of leading teams of 30+ engineers. 4X hackathon winner specializing in Django, FastAPI, blockchain development, and cloud infrastructure.",
+    "Software engineer and blockchain developer. Building scalable applications and Web3 solutions.",
   keywords:
-    "Goodness Mbakara, Computer Science Graduate, Backend Engineer, Blockchain Developer, Team Leader, Django, FastAPI, Python, Solidity, EVM, Solana, PostgreSQL, MongoDB, KWEK, ZIDIO, HngX, Hackathon Winner, University of Uyo",
-  authors: [{ name: "Goodness E. Mbakara" }],
+    "Goodness Mbakara, Software Engineer, Backend Engineer, Blockchain Developer, Django, FastAPI, Python, Solidity, Web3",
+  authors: [{ name: "Goodness Mbakara" }],
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
-    title: "Goodness E. Mbakara - Computer Science Graduate & Team Leader",
+    title: "Goodness Mbakara — Software Engineer",
     description:
-      "Computer Science graduate and dynamic backend engineer with proven track record of leading teams and building scalable solutions. 4X hackathon winner.",
+      "Software engineer and blockchain developer. Building scalable applications and Web3 solutions.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Goodness E. Mbakara - Computer Science Graduate & Team Leader",
+    title: "Goodness Mbakara — Software Engineer",
     description:
-      "Computer Science graduate and dynamic backend engineer with proven track record of leading teams and building scalable solutions. 4X hackathon winner.",
+      "Software engineer and blockchain developer. Building scalable applications and Web3 solutions.",
   },
 };
 
@@ -33,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,8 +40,12 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

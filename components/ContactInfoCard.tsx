@@ -7,7 +7,7 @@ export default function ContactInfoCard() {
       <h3 className={contactStyles.infoTitle}>Let's Connect</h3>
       <p className={contactStyles.infoText}>
         Whether you have a project in mind, want to collaborate, or just want to
-        say hello, I'd love to hear from you.
+        say hello — I'd love to hear from you.
       </p>
       <div className={contactStyles.socialLinks}>
         <a
@@ -16,7 +16,7 @@ export default function ContactInfoCard() {
           rel="noopener noreferrer"
           className={contactStyles.socialBtn}
         >
-          <Mail size={18} />
+          <Mail size={16} />
           <span>Email</span>
         </a>
         <a
@@ -25,8 +25,8 @@ export default function ContactInfoCard() {
           rel="noopener noreferrer"
           className={contactStyles.socialBtn}
         >
-          <Twitter size={18} />
-          <span>@goodnesmbakara</span>
+          <Twitter size={16} />
+          <span>Twitter</span>
         </a>
         <a
           href="https://github.com/Goodnessmbakara"
@@ -34,7 +34,7 @@ export default function ContactInfoCard() {
           rel="noopener noreferrer"
           className={contactStyles.socialBtn}
         >
-          <Github size={18} />
+          <Github size={16} />
           <span>GitHub</span>
         </a>
         <a
@@ -43,7 +43,7 @@ export default function ContactInfoCard() {
           rel="noopener noreferrer"
           className={contactStyles.socialBtn}
         >
-          <Linkedin size={18} />
+          <Linkedin size={16} />
           <span>LinkedIn</span>
         </a>
       </div>
