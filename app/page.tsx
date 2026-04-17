@@ -413,7 +413,7 @@ export default function Home() {
           <div className={layoutStyles.container}>
             <div className={contactStyles.header}>
               <div className={contactStyles.sectionLabel}>Contact</div>
-              <h2>Your move.</h2>
+              <h2>..Your move.</h2>
               <p
                 style={{
                   color: "var(--text-secondary)",
