@@ -1,10 +1,12 @@
 /* ===== Page Wrapper ===== */
 .body {
   min-height: 100vh;
-  background: var(--bg);
+  background: transparent;
   font-family: var(--font-body);
   line-height: 1.6;
   color: var(--text-primary);
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== Top Logo Bar ===== */

@@ -7,10 +7,10 @@
   height: 100vh;
   overflow: hidden;
   z-index: -1;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
   /* Fine dot grid pattern */
-  background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(circle, #c0c0c0 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
   animation: slideOut linear;
   animation-timeline: scroll(block nearest);
   animation-range: 0 60vh;
@@ -26,7 +26,7 @@
   font-style: italic;
   font-size: 18vw;
   color: transparent;
-  -webkit-text-stroke: 1.5px #e0e0e0;
+  -webkit-text-stroke: 1.5px #d0d0d0;
   white-space: nowrap;
   user-select: none;
   pointer-events: none;

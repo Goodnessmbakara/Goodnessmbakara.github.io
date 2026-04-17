@@ -54,15 +54,6 @@ const featuredProjects = [
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://youspeakhq.com",
   },
   {
-    name: "VoxCard",
-    description:
-      "Decentralized savings platform built on XION blockchain. Enables users to create and manage rotating savings circles with smart contract security and gasless transactions.",
-    liveUrl: "https://voxcard.vercel.app",
-    githubUrl: "https://github.com/Goodnessmbakara/voxcard",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://voxcard.vercel.app",
-  },
-  {
     name: "Kiipa",
     description:
       "Decentralized digital inheritance platform built on Lisk blockchain. Enables secure, transparent, and automated inheritance management with smart contracts.",
@@ -249,7 +240,7 @@ export default function Home() {
                     </span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>2025 — Present</div>
+                <div className={experienceStyles.text}>2025 </div>
               </div>
 
               {/* CTO — EstateSync */}

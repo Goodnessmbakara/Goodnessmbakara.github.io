@@ -127,7 +127,7 @@
 
 .button {
   width: 100%;
-  background: var(--text-primary);
+  background: var(--accent);
   color: #fff;
   font-weight: 500;
   font-size: 0.9375rem;
@@ -141,7 +141,7 @@
 }
 
 .button:hover {
-  background: var(--accent);
+  background: var(--accent-hover);
 }
 
 .button:disabled {
