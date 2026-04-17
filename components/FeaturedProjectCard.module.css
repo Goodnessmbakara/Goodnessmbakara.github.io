@@ -20,14 +20,14 @@
 }
 
 .previewWrapper {
-  flex: 2 1 0;
+  flex: 2.4 1 0;
   min-width: 0;
   display: flex;
   align-items: stretch;
   justify-content: center;
   background: var(--bg-secondary);
   position: relative;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/8.5;
 }
 
 .iframe {
@@ -35,7 +35,7 @@
   height: 100%;
   border: none;
   background: var(--bg-secondary);
-  min-height: 300px;
+  min-height: 340px;
   border-right: 1px solid var(--border);
 }
 
@@ -124,9 +124,9 @@
   align-items: center;
   justify-content: center;
   background: var(--bg-secondary);
-  height: 300px;
+  height: 340px;
   min-width: 0;
-  flex: 2 1 0;
+  flex: 2.4 1 0;
   border-right: 1px solid var(--border);
 }
 
