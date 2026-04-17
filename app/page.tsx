@@ -1,7 +1,6 @@
 "use client";
 
-import AnimatedProfileCard from "@/components/AnimatedProfileCard";
-import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import styles from "../components/HeroSection.module.css";
 import layoutStyles from "../components/Layout.module.css";
 import experienceStyles from "../components/ExperienceSection.module.css";
@@ -15,9 +14,17 @@ import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 
 const featuredProjects = [
   {
+    name: "EstateSync",
+    description:
+      "Estate expense management platform for Nigerian properties. Set up estates, invite stakeholders, allocate and track expenses — one-time or recurring. Role-based access for managers, homeowners, and tenants.",
+    liveUrl: "https://estatesync.com.ng",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://estatesync.com.ng",
+  },
+  {
     name: "Tilt Pay",
     description:
-      "Mobile payment app built on Solana blockchain. Instant, secure payments — online, in-store or peer-to-peer. No hardware costs, no hidden fees, just 1% on tap-to-pay. Supports universal currency with zero-fee transfers.",
+      "Mobile payment app built on Solana blockchain. Instant, secure payments — online, in-store or peer-to-peer. No hardware costs, no hidden fees, just 1% on tap-to-pay. Universal currency with zero-fee transfers.",
     liveUrl: "https://tilt-pay.com",
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://tilt-pay.com",
@@ -73,7 +80,7 @@ const featuredProjects = [
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://medicore-ai.netlify.app/",
   },
-{
+  {
     name: "Solana Fellowship Server",
     description:
       "Rust-based Solana development server for keypair generation, SPL token operations, and message signing. Selected for Superdevs Academy (Top 400/5000+).",
@@ -100,49 +107,30 @@ export default function Home() {
         {/* Hero Section */}
         <section id="hero" className={styles.heroSection}>
           <div className={layoutStyles.container}>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                gap: "4rem",
-              }}
-            >
-              <div className={styles.heroContent}>
-                <span className={styles.overline}>Software Engineer & Builder</span>
-                <h1 className={styles.headline}>
-                  Ship it. Then ship the next one.
-                </h1>
-                <p className={styles.intro}>
-                  The gap between an idea and a product is discipline. I close
-                  that gap — with code, with teams, with deadlines that don't
-                  bend. Seven hackathons won. Thirty engineers led. Products
-                  people actually use.
-                </p>
-                <div className={styles.ctaGroup}>
-                  <button
-                    className={styles.primaryBtn}
-                    onClick={() => scrollToSection("projects")}
-                  >
-                    View Projects
-                  </button>
-                  <button
-                    className={styles.secondaryBtn}
-                    onClick={() => scrollToSection("contact")}
-                  >
-                    Get In Touch
-                  </button>
-                </div>
-              </div>
-              <div
-                style={{
-                  flex: 1,
-                  minWidth: 300,
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <AnimatedProfileCard />
+            <div className={styles.heroContent}>
+              <span className={styles.overline}>Software Engineer & Builder</span>
+              <h1 className={styles.headline}>
+                Ship it. Then ship the next one.
+              </h1>
+              <p className={styles.intro}>
+                The gap between an idea and a product is discipline. I close
+                that gap — with code, with teams, with deadlines that don't
+                bend. Seven hackathons won. Thirty engineers led. Products
+                people actually use.
+              </p>
+              <div className={styles.ctaGroup}>
+                <button
+                  className={styles.primaryBtn}
+                  onClick={() => scrollToSection("projects")}
+                >
+                  View Projects
+                </button>
+                <button
+                  className={styles.secondaryBtn}
+                  onClick={() => scrollToSection("contact")}
+                >
+                  Get In Touch
+                </button>
               </div>
             </div>
           </div>
@@ -205,6 +193,73 @@ export default function Home() {
             </div>
 
             <div className={experienceStyles.grid}>
+              {/* CTO — EstateSync */}
+              <div className={experienceStyles.card}>
+                <div className={experienceStyles.flex}>
+                  <div>
+                    <h3>Chief Technology Officer</h3>
+                    <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>
+                      EstateSync
+                    </div>
+                  </div>
+                  <span className={experienceStyles.badge}>CTO</span>
+                </div>
+                <ul className={experienceStyles.list}>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Built the MVP in three weeks — estate expense tracking
+                      platform for Nigerian properties
+                    </span>
+                  </li>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Architected role-based access for managers, homeowners,
+                      and tenants with real-time reporting
+                    </span>
+                  </li>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Leading technical roadmap: wallet & payments, advanced
+                      security, and family safety tools
+                    </span>
+                  </li>
+                </ul>
+                <div className={experienceStyles.text}>Oct 2025 — Present</div>
+              </div>
+
+              {/* CTO — Locova */}
+              <div className={experienceStyles.card}>
+                <div className={experienceStyles.flex}>
+                  <div>
+                    <h3>Chief Technology Officer</h3>
+                    <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>
+                      Locova
+                    </div>
+                  </div>
+                  <span className={experienceStyles.badge}>CTO</span>
+                </div>
+                <ul className={experienceStyles.list}>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Joined as CTO and shipped the MVP in three weeks
+                    </span>
+                  </li>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Defined technical architecture and led product development
+                      from zero to launch
+                    </span>
+                  </li>
+                </ul>
+                <div className={experienceStyles.text}>2025 — Present</div>
+              </div>
+
+              {/* Team Lead — HngX */}
               <div className={experienceStyles.card}>
                 <div className={experienceStyles.flex}>
                   <div>
@@ -239,6 +294,7 @@ export default function Home() {
                 <div className={experienceStyles.text}>Sep 2023 — Oct 2023</div>
               </div>
 
+              {/* Full Stack — ZIDIO */}
               <div className={experienceStyles.card}>
                 <div className={experienceStyles.flex}>
                   <div>
@@ -268,6 +324,7 @@ export default function Home() {
                 <div className={experienceStyles.text}>Aug 2024 — Nov 2024</div>
               </div>
 
+              {/* Backend — ALX */}
               <div className={experienceStyles.card}>
                 <div className={experienceStyles.flex}>
                   <div>
