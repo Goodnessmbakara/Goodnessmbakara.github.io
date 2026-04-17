@@ -193,6 +193,44 @@ export default function Home() {
             </div>
 
             <div className={experienceStyles.grid}>
+              {/* Backend / AI Engineer — Guidde */}
+              <div className={experienceStyles.card}>
+                <div className={experienceStyles.flex}>
+                  <div>
+                    <h3>Backend & AI Engineer</h3>
+                    <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>
+                      Guidde
+                    </div>
+                  </div>
+                  <span className={experienceStyles.badge}>AI / Backend</span>
+                </div>
+                <ul className={experienceStyles.list}>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Building backend infrastructure for AI-powered video
+                      documentation platform ($77M raised, 4,500+ customers)
+                    </span>
+                  </li>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Working on GPT-powered script generation, voice synthesis
+                      across 200+ voices, and auto-translation in 50+ languages
+                    </span>
+                  </li>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Contributing to Visual Imitation Learning pipeline —
+                      turning workflow recordings into structured knowledge for
+                      AI agents
+                    </span>
+                  </li>
+                </ul>
+                <div className={experienceStyles.text}>2025 — Present</div>
+              </div>
+
               {/* CTO — EstateSync */}
               <div className={experienceStyles.card}>
                 <div className={experienceStyles.flex}>
@@ -208,7 +246,7 @@ export default function Home() {
                   <li className={experienceStyles.flex}>
                     <div className={experienceStyles.dot}></div>
                     <span>
-                      Built the MVP in three weeks — estate expense tracking
+                      Shipped the MVP in 10 weeks — estate expense tracking
                       platform for Nigerian properties
                     </span>
                   </li>
