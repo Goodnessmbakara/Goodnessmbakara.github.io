@@ -6,7 +6,7 @@ export default function ContactInfoCard() {
     <div className={contactStyles.infoCard}>
       <h3 className={contactStyles.infoTitle}>Don't be a stranger.</h3>
       <p className={contactStyles.infoText}>
-        Startups, protocols, open source — if it ships and it matters, I'm
+        Startups, protocols, open source. If it ships and it matters, I'm
         interested. Reach out anywhere.
       </p>
       <div className={contactStyles.socialLinks}>

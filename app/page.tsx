@@ -16,7 +16,7 @@ const featuredProjects = [
   {
     name: "EstateSync",
     description:
-      "Estate expense management platform for Nigerian properties. Set up estates, invite stakeholders, allocate and track expenses — one-time or recurring. Role-based access for managers, homeowners, and tenants.",
+      "Estate expense management platform for Nigerian properties. Set up estates, invite stakeholders, allocate and track expenses, one-time or recurring. Role-based access for managers, homeowners, and tenants.",
     liveUrl: "https://estatesync.com.ng",
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://estatesync.com.ng",
@@ -24,7 +24,7 @@ const featuredProjects = [
   {
     name: "Tilt Pay",
     description:
-      "Mobile payment app built on Solana blockchain. Instant, secure payments — online, in-store or peer-to-peer. No hardware costs, no hidden fees, just 1% on tap-to-pay. Universal currency with zero-fee transfers.",
+      "Mobile payment app built on Solana blockchain. Instant, secure payments across online, in-store and peer-to-peer. No hardware costs, no hidden fees, just 1% on tap-to-pay. Universal currency with zero-fee transfers.",
     liveUrl: "https://tilt-pay.com",
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://tilt-pay.com",
@@ -96,7 +96,7 @@ export default function Home() {
               </h1>
               <p className={styles.intro}>
                 The gap between an idea and a product is discipline. I close
-                that gap — with code, with teams, with deadlines that don't
+                that gap with code, with teams, with deadlines that don't
                 bend. <strong className={styles.introHighlight}>7 HACKATHONS WON!</strong> 30 engineers led. Products
                 people actually use.
               </p>
@@ -204,13 +204,13 @@ export default function Home() {
                   <li className={experienceStyles.flex}>
                     <div className={experienceStyles.dot}></div>
                     <span>
-                      Contributing to Visual Imitation Learning pipeline —
+                      Contributing to Visual Imitation Learning pipeline,
                       turning workflow recordings into structured knowledge for
                       AI agents
                     </span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>2025 — Present</div>
+                <div className={experienceStyles.text}>2025 – Present</div>
               </div>
 
               {/* Software Engineer — OurWin Nigeria */}
@@ -258,7 +258,7 @@ export default function Home() {
                   <li className={experienceStyles.flex}>
                     <div className={experienceStyles.dot}></div>
                     <span>
-                      Shipped the MVP in 10 weeks — estate expense tracking
+                      Shipped the MVP in 10 weeks: an estate expense tracking
                       platform for Nigerian properties
                     </span>
                   </li>
@@ -277,7 +277,7 @@ export default function Home() {
                     </span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>Oct 2025 — Present</div>
+                <div className={experienceStyles.text}>Oct 2025 – Present</div>
               </div>
 
               {/* CTO — Locova */}
@@ -306,7 +306,7 @@ export default function Home() {
                     </span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>Mar 2026 — Present</div>
+                <div className={experienceStyles.text}>Mar 2026 – Present</div>
               </div>
 
               {/* Team Lead — HngX */}
@@ -341,7 +341,7 @@ export default function Home() {
                     </span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>Sep 2023 — Oct 2023</div>
+                <div className={experienceStyles.text}>Sep 2023 – Oct 2023</div>
               </div>
 
               {/* Full Stack — ZIDIO */}
@@ -371,7 +371,7 @@ export default function Home() {
                     <span>Designed MongoDB schemas for dynamic listings</span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>Aug 2024 — Nov 2024</div>
+                <div className={experienceStyles.text}>Aug 2024 – Nov 2024</div>
               </div>
 
               {/* Backend — ALX */}
@@ -397,7 +397,7 @@ export default function Home() {
                     <span>Integrated caching for enhanced performance</span>
                   </li>
                 </ul>
-                <div className={experienceStyles.text}>Jun 2022 — May 2023</div>
+                <div className={experienceStyles.text}>Jun 2022 – May 2023</div>
               </div>
             </div>
           </div>

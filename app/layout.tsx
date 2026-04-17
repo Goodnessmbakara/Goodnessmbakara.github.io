@@ -2,7 +2,7 @@ import "./global-styles.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Goodness Mbakara — Software Engineer",
+  title: "Goodness Mbakara | Software Engineer",
   description:
     "Software engineer and blockchain developer. Building scalable applications and Web3 solutions.",
   keywords:
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
-    title: "Goodness Mbakara — Software Engineer",
+    title: "Goodness Mbakara | Software Engineer",
     description:
       "Software engineer and blockchain developer. Building scalable applications and Web3 solutions.",
     type: "website",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Goodness Mbakara — Software Engineer",
+    title: "Goodness Mbakara | Software Engineer",
     description:
       "Software engineer and blockchain developer. Building scalable applications and Web3 solutions.",
   },
