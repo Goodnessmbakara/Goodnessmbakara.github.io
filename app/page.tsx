@@ -97,7 +97,7 @@ export default function Home() {
               <p className={styles.intro}>
                 The gap between an idea and a product is discipline. I close
                 that gap — with code, with teams, with deadlines that don't
-                bend. Seven hackathons won. Thirty engineers led. Products
+                bend. <strong className={styles.introHighlight}>7 HACKATHONS WON!</strong> 30 engineers led. Products
                 people actually use.
               </p>
               <div className={styles.ctaGroup}>
