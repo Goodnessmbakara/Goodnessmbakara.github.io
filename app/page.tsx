@@ -118,7 +118,10 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className={layoutStyles.sectionPadding}>
+        <section
+          id="projects"
+          className={`${layoutStyles.sectionPadding} ${projectsStyles.section}`}
+        >
           <div className={layoutStyles.container}>
             <div className={projectsStyles.header}>
               <div className={projectsStyles.sectionLabel}>Work</div>
@@ -190,7 +193,7 @@ export default function Home() {
                     <div className={experienceStyles.dot}></div>
                     <span>
                       Building backend infrastructure for AI-powered video
-                      documentation platform ($77M raised, 4,500+ customers)
+                      documentation platform (4,500+ customers)
                     </span>
                   </li>
                   <li className={experienceStyles.flex}>

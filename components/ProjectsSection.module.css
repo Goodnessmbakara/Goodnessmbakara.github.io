@@ -1,3 +1,9 @@
+.section {
+  background: #fafafa;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
 .header {
   margin-bottom: 3.5rem;
 }
