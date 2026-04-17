@@ -12,7 +12,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +29,65 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+/* ===== Hamburger — single line style ===== */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 101;
+}
+
+.hamburgerLine {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: background 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.hamburgerLine::before,
+.hamburgerLine::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: transform 0.3s, opacity 0.3s, background 0.3s;
+}
+
+.hamburgerLine::before {
+  top: -8px;
+}
+
+.hamburgerLine::after {
+  top: 8px;
+}
+
+/* Open state — X */
+.hamburgerOpen .hamburgerLine {
+  background: transparent;
+}
+
+.hamburgerOpen .hamburgerLine::before,
+.hamburgerOpen .hamburgerLine::after {
+  background: #ffffff;
+}
+
+.hamburgerOpen .hamburgerLine::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerLine::after {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ===== Right Side Vertical Nav (Desktop) ===== */
@@ -68,9 +127,6 @@
   height: 48px;
   background: var(--text-secondary);
   margin: 0.75rem 0;
-  align-self: flex-end;
-  margin-right: 0;
-  /* center the line under the text */
   align-self: center;
 }
 
@@ -82,6 +138,71 @@
 
 .sideNavCta:hover {
   color: var(--accent-hover) !important;
+}
+
+/* ===== Full-Screen Mobile Overlay ===== */
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.mobileOverlayOpen {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileOverlayNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobileOverlayNav button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0.25rem 0;
+  line-height: 1.2;
+}
+
+.mobileOverlayNav button:hover {
+  color: #ffffff;
+}
+
+.mobileOverlayFooter {
+  position: absolute;
+  bottom: 2.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.mobileOverlayFooter a {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.mobileOverlayFooter a:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ===== Container & Section ===== */
@@ -128,65 +249,6 @@
   }
 }
 
-/* ===== Hamburger ===== */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-primary);
-  padding: 0.25rem;
-}
-
-/* ===== Mobile Menu ===== */
-.mobileMenu {
-  display: none;
-  flex-direction: column;
-  gap: 0;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: 5rem 2rem 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  animation: slideDown 0.2s ease-out;
-  z-index: 45;
-}
-
-.mobileMenu button {
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.875rem 0;
-  transition: color 0.2s;
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
-  border-bottom: 1px solid var(--border);
-}
-
-.mobileMenu button:last-child {
-  border-bottom: none;
-}
-
-.mobileMenu button:hover {
-  color: var(--text-primary);
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .navbarTop {
@@ -194,15 +256,13 @@
   }
 
   .hamburger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .sideNav {
     display: none;
-  }
-
-  .mobileMenu {
-    display: flex;
   }
 
   .container {
@@ -211,6 +271,10 @@
 
   .sectionPadding {
     padding: 5rem 0;
+  }
+
+  .mobileOverlayNav button {
+    font-size: 2.5rem;
   }
 }
 
@@ -227,7 +291,12 @@
     padding: 3.5rem 0;
   }
 
-  .mobileMenu {
-    padding: 4.5rem 1.25rem 1.5rem;
+  .mobileOverlayNav button {
+    font-size: 2rem;
+  }
+
+  .mobileOverlayFooter {
+    gap: 1.5rem;
+    bottom: 2rem;
   }
 }

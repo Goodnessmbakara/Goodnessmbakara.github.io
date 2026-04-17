@@ -7,7 +7,10 @@
   height: 100vh;
   overflow: hidden;
   z-index: -1;
-  background: var(--bg);
+  background-color: #fafafa;
+  /* Fine dot grid pattern */
+  background-image: radial-gradient(circle, #d4d4d4 1px, transparent 1px);
+  background-size: 24px 24px;
   animation: slideOut linear;
   animation-timeline: scroll(block nearest);
   animation-range: 0 60vh;
@@ -16,26 +19,19 @@
 
 .heroBackgroundText {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 12vw;
-  color: #f0f0f0;
+  bottom: 8%;
+  left: -2%;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18vw;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #e0e0e0;
   white-space: nowrap;
   user-select: none;
   pointer-events: none;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   line-height: 1;
-}
-
-.heroBackgroundImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.06;
-  filter: grayscale(1);
 }
 
 @keyframes slideOut {
@@ -135,68 +131,6 @@
   border-color: var(--text-primary);
 }
 
-/* ===== Profile Card (Simplified) ===== */
-.profileCardWrap {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.profileCard {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 2.5rem 2rem 2rem;
-  max-width: 320px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.profilePhoto {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 1.25rem;
-  border: 2px solid var(--border);
-}
-
-.profilePhoto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-}
-
-.profileFacts {
-  color: var(--text-secondary);
-  font-size: 0.9375rem;
-  margin-bottom: 0.25rem;
-}
-
-.profileHighlights {
-  margin: 0.75rem 0 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.highlight {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 3px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.8125rem;
-  font-weight: 500;
-}
-
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .heroSection {
@@ -209,9 +143,9 @@
   .intro {
     font-size: 1rem;
   }
-  .profileCard {
-    max-width: 280px;
-    padding: 2rem 1.5rem 1.5rem;
+  .heroBackgroundText {
+    font-size: 24vw;
+    -webkit-text-stroke: 1px #e0e0e0;
   }
 }
 
@@ -232,10 +166,9 @@
     text-align: center;
   }
   .heroBackgroundText {
-    font-size: 20vw;
+    font-size: 28vw;
   }
-  .profilePhoto {
-    width: 100px;
-    height: 100px;
+  .heroBackground {
+    background-size: 20px 20px;
   }
 }

@@ -72,15 +72,6 @@ const featuredProjects = [
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://kiipa.vercel.app/",
   },
   {
-    name: "Medicore AI",
-    description:
-      "AI-powered healthcare platform for medical diagnosis and patient management. Integrates machine learning models for predictive healthcare analytics.",
-    liveUrl: "https://medicore-ai.netlify.app/",
-    githubUrl: "https://github.com/Goodnessmbakara/medicore-ai",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://medicore-ai.netlify.app/",
-  },
-  {
     name: "Solana Fellowship Server",
     description:
       "Rust-based Solana development server for keypair generation, SPL token operations, and message signing. Selected for Superdevs Academy (Top 400/5000+).",
@@ -225,6 +216,36 @@ export default function Home() {
                       Contributing to Visual Imitation Learning pipeline —
                       turning workflow recordings into structured knowledge for
                       AI agents
+                    </span>
+                  </li>
+                </ul>
+                <div className={experienceStyles.text}>2025 — Present</div>
+              </div>
+
+              {/* Software Engineer — OurWin Nigeria */}
+              <div className={experienceStyles.card}>
+                <div className={experienceStyles.flex}>
+                  <div>
+                    <h3>Software Engineer</h3>
+                    <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>
+                      OurWin Nigeria
+                    </div>
+                  </div>
+                  <span className={experienceStyles.badge}>Engineering</span>
+                </div>
+                <ul className={experienceStyles.list}>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Building logistics platform serving 800+ businesses with
+                      real-time tracking and route optimization
+                    </span>
+                  </li>
+                  <li className={experienceStyles.flex}>
+                    <div className={experienceStyles.dot}></div>
+                    <span>
+                      Engineering transportation, warehousing, and supply chain
+                      management systems for nationwide delivery operations
                     </span>
                   </li>
                 </ul>
