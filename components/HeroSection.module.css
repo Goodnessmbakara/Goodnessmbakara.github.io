@@ -24,6 +24,7 @@
   transform: translateX(-50%);
   font-family: var(--font-display);
   font-weight: 400;
+  font-style: italic;
   font-size: 18vw;
   color: transparent;
   -webkit-text-stroke: 1.5px #d0d0d0;
@@ -74,7 +75,7 @@
 }
 
 .headline {
-  font-family: var(--font-display);
+  font-family: var(--font-headline);
   font-weight: 400;
   font-size: 5.5rem;
   line-height: 1.05;
@@ -155,29 +156,103 @@
   }
 }
 
+/* ===== Mobile Redesign (≤600px) ===== */
 @media (max-width: 600px) {
   .heroSection {
-    padding: 6rem 0 3rem;
+    min-height: calc(100vh - 60px);
+    padding: 6.5rem 0 2.5rem;
+    align-items: flex-start;
   }
+
+  .heroContent {
+    width: 100%;
+  }
+
+  /* Accent bar before overline */
+  .overline {
+    position: relative;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 1.25rem;
+    padding-left: 2.25rem;
+  }
+  .overline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1.5rem;
+    height: 1.5px;
+    background: var(--accent);
+    transform: translateY(-50%);
+  }
+
+  /* Headline: fluid, dramatic, tight */
   .headline {
-    font-size: 2.625rem;
+    font-size: clamp(2.75rem, 11.5vw, 3.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    margin-bottom: 1.75rem;
   }
+
+  .intro {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    margin-bottom: 2.25rem;
+    max-width: 100%;
+  }
+
+  .introHighlight {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  /* Buttons: larger touch targets, refined */
   .ctaGroup {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
   .primaryBtn,
   .secondaryBtn {
     width: 100%;
+    padding: 1.0625rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
     text-align: center;
+    letter-spacing: 0.01em;
+    transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
   }
+  .secondaryBtn {
+    box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.35);
+  }
+  .primaryBtn:active,
+  .secondaryBtn:active {
+    transform: scale(0.985);
+  }
+
+  /* Watermark: subtle texture behind lower content */
   .heroBackgroundText {
-    font-size: 20vw;
-    bottom: 25%;
-    -webkit-text-stroke: 0.8px #e0e0e0;
-    letter-spacing: -0.01em;
+    font-size: 30vw;
+    bottom: 4rem;
+    -webkit-text-stroke: 0.8px #d8d8d8;
+    letter-spacing: -0.02em;
+    opacity: 0.85;
   }
   .heroBackground {
-    background-size: 20px 20px;
+    background-size: 18px 18px;
+    background-image: radial-gradient(circle, #d0d0d0 1px, transparent 1px);
+  }
+}
+
+/* ===== Very small devices (≤380px) ===== */
+@media (max-width: 380px) {
+  .headline {
+    font-size: clamp(2.375rem, 10.5vw, 2.75rem);
+  }
+  .intro {
+    font-size: 1rem;
   }
 }

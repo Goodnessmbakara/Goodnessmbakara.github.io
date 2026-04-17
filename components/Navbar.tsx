@@ -1,6 +1,5 @@
 "use client";
 
-import Logo from "./Logo";
 import { useState } from "react";
 import layoutStyles from "./Layout.module.css";
 
@@ -18,7 +17,6 @@ export default function Navbar() {
       {/* Top-left logo bar */}
       <div className={layoutStyles.navbarTop}>
         <div className={layoutStyles.logoGroup}>
-          <Logo size={32} color={isMenuOpen ? "#ffffff" : "#111111"} />
           <div>
             <div
               style={{
@@ -28,7 +26,7 @@ export default function Navbar() {
                 transition: "color 0.3s",
               }}
             >
-              Goodness Mbakara
+              GoodnessMbakara.eth
             </div>
           </div>
         </div>

@@ -7,7 +7,8 @@
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
   --border: #e0e0e0;
-  --font-display: 'Sniglet', system-ui, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-headline: 'Sniglet', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -54,10 +55,10 @@ h1 {
 }
 
 h2 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 2.75rem;
-  line-height: 1.1;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--text-primary);
 }
