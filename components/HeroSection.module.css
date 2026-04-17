@@ -182,8 +182,8 @@
 /* ===== Mobile Redesign (≤600px) ===== */
 @media (max-width: 600px) {
   .heroSection {
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: calc(100vh - 88px);
+    min-height: calc(100dvh - 88px);
     padding: 6.5rem 0 1.5rem;
     align-items: stretch;
   }
@@ -193,8 +193,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: calc(100vh - 8rem);
-    min-height: calc(100dvh - 8rem);
+    min-height: calc(100vh - 8rem - 88px);
+    min-height: calc(100dvh - 8rem - 88px);
   }
 
   /* Accent bar before overline */
