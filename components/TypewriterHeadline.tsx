@@ -1,16 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./HeroSection.module.css";
 
-const PHRASE_1 = "Ship it.";
-const PHRASE_2 = "Then ship the next one.";
+const PHRASE = "Ship it. Then ship the next one.";
 
-const TYPE_SPEED = 85;
-const DELETE_SPEED = 45;
+const TYPE_SPEED = 70;
+const DELETE_SPEED = 30;
 const START_DELAY = 450;
-const HOLD_AFTER_PHRASE_1 = 900;
-const PAUSE_BEFORE_PHRASE_2 = 300;
+const HOLD_AFTER_TYPED = 1800;
+const PAUSE_BEFORE_RETYPE = 450;
 
 interface Props {
   className?: string;
@@ -18,6 +17,7 @@ interface Props {
 
 export default function TypewriterHeadline({ className }: Props) {
   const [text, setText] = useState("");
+  const cancelledRef = useRef(false);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -25,44 +25,53 @@ export default function TypewriterHeadline({ className }: Props) {
     ).matches;
 
     if (prefersReducedMotion) {
-      setText(PHRASE_2);
+      setText(PHRASE);
       return;
     }
 
-    const timers: ReturnType<typeof setTimeout>[] = [];
-    let delay = START_DELAY;
+    cancelledRef.current = false;
 
-    const schedule = (value: string, at: number) => {
-      timers.push(setTimeout(() => setText(value), at));
+    const wait = (ms: number) =>
+      new Promise<void>((resolve) => {
+        const id = setTimeout(resolve, ms);
+        if (cancelledRef.current) clearTimeout(id);
+      });
+
+    const typePhrase = async () => {
+      for (let i = 1; i <= PHRASE.length; i++) {
+        if (cancelledRef.current) return;
+        setText(PHRASE.slice(0, i));
+        await wait(TYPE_SPEED);
+      }
     };
 
-    // Phase 1: type "Ship it."
-    for (let i = 1; i <= PHRASE_1.length; i++) {
-      schedule(PHRASE_1.slice(0, i), delay);
-      delay += TYPE_SPEED;
-    }
+    const deletePhrase = async () => {
+      for (let i = PHRASE.length - 1; i >= 0; i--) {
+        if (cancelledRef.current) return;
+        setText(PHRASE.slice(0, i));
+        await wait(DELETE_SPEED);
+      }
+    };
 
-    delay += HOLD_AFTER_PHRASE_1;
+    const loop = async () => {
+      await wait(START_DELAY);
+      while (!cancelledRef.current) {
+        await typePhrase();
+        await wait(HOLD_AFTER_TYPED);
+        await deletePhrase();
+        await wait(PAUSE_BEFORE_RETYPE);
+      }
+    };
 
-    // Delete "Ship it."
-    for (let i = PHRASE_1.length - 1; i >= 0; i--) {
-      schedule(PHRASE_1.slice(0, i), delay);
-      delay += DELETE_SPEED;
-    }
+    loop();
 
-    delay += PAUSE_BEFORE_PHRASE_2;
-
-    // Phase 2: type "Then ship the next one."
-    for (let i = 1; i <= PHRASE_2.length; i++) {
-      schedule(PHRASE_2.slice(0, i), delay);
-      delay += TYPE_SPEED;
-    }
-
-    return () => timers.forEach(clearTimeout);
+    return () => {
+      cancelledRef.current = true;
+    };
   }, []);
 
   return (
-    <h1 className={className} aria-label={PHRASE_2}>
+    <h1 className={className} aria-label={PHRASE}>
       <span>{text}</span>
       <span className={styles.caret} aria-hidden="true" />
     </h1>
