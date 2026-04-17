@@ -182,13 +182,17 @@
 /* ===== Mobile Redesign (≤600px) ===== */
 @media (max-width: 600px) {
   .heroSection {
-    min-height: calc(100vh - 60px);
-    padding: 6.5rem 0 2.5rem;
-    align-items: flex-start;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 6.5rem 0 1.5rem;
+    align-items: stretch;
   }
 
   .heroContent {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   /* Accent bar before overline */
@@ -236,7 +240,8 @@
     flex-direction: column;
     width: 100%;
     gap: 0.75rem;
-    margin-top: 5rem;
+    margin-top: auto;
+    padding-bottom: 0.5rem;
   }
   .primaryBtn,
   .secondaryBtn {
