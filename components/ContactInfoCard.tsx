@@ -11,7 +11,7 @@ export default function ContactInfoCard() {
       </p>
       <div className={contactStyles.socialLinks}>
         <a
-          href="mailto:goodnessmbakara@gmail.com"
+          href="mailto:mbakaragoodness2003@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           className={contactStyles.socialBtn}

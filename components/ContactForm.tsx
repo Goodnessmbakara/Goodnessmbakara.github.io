@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Mail, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import contactStyles from "./ContactSection.module.css";
 
 export default function ContactForm() {
@@ -172,7 +171,7 @@ export default function ContactForm() {
             <span>{statusMessage}</span>
           </div>
         )}
-        <Button
+        <button
           type="submit"
           disabled={isSubmitting}
           className={contactStyles.button}
@@ -195,7 +194,7 @@ export default function ContactForm() {
               Send Message
             </>
           )}
-        </Button>
+        </button>
       </form>
     </div>
   );
