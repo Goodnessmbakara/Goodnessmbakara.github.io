@@ -1,28 +1,34 @@
 import "./global-styles.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+const TITLE = "Goodness Mbakara — Ideas are cheap. Execution ships.";
+const DESCRIPTION =
+  "The gap between an idea and a product is discipline. I close that gap with code, with teams, with deadlines that don't bend. Software engineer shipping proof of work, not proof of concept.";
 
 export const metadata: Metadata = {
-  title: "Goodness Mbakara | Software Engineer",
-  description:
-    "Software engineer and blockchain developer. Building scalable applications and Web3 solutions.",
+  title: TITLE,
+  description: DESCRIPTION,
   keywords:
-    "Goodness Mbakara, Software Engineer, Backend Engineer, Blockchain Developer, Django, FastAPI, Python, Solidity, Web3",
+    "Goodness Mbakara, Software Engineer, Backend Engineer, Blockchain Developer, Django, FastAPI, Python, Solidity, Web3, Builder",
   authors: [{ name: "Goodness Mbakara" }],
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
-    title: "Goodness Mbakara | Software Engineer",
-    description:
-      "Software engineer and blockchain developer. Building scalable applications and Web3 solutions.",
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: "GoodnessMbakara.eth",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Goodness Mbakara | Software Engineer",
-    description:
-      "Software engineer and blockchain developer. Building scalable applications and Web3 solutions.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
