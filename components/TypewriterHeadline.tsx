@@ -3,7 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./HeroSection.module.css";
 
-const PHRASE = "Ship it. Then ship the next one.";
+const PHRASES = [
+  "Ship it. Then ship the next one.",
+  "Ideas are cheap. Execution ships.",
+  "Think in systems. Build in weeks.",
+  "Deadlines don't bend. Neither do I.",
+  "Less talk. More commits.",
+];
 
 const TYPE_SPEED = 70;
 const DELETE_SPEED = 30;
@@ -25,7 +31,7 @@ export default function TypewriterHeadline({ className }: Props) {
     ).matches;
 
     if (prefersReducedMotion) {
-      setText(PHRASE);
+      setText(PHRASES[0]);
       return;
     }
 
@@ -37,29 +43,32 @@ export default function TypewriterHeadline({ className }: Props) {
         if (cancelledRef.current) clearTimeout(id);
       });
 
-    const typePhrase = async () => {
-      for (let i = 1; i <= PHRASE.length; i++) {
+    const typePhrase = async (phrase: string) => {
+      for (let i = 1; i <= phrase.length; i++) {
         if (cancelledRef.current) return;
-        setText(PHRASE.slice(0, i));
+        setText(phrase.slice(0, i));
         await wait(TYPE_SPEED);
       }
     };
 
-    const deletePhrase = async () => {
-      for (let i = PHRASE.length - 1; i >= 0; i--) {
+    const deletePhrase = async (phrase: string) => {
+      for (let i = phrase.length - 1; i >= 0; i--) {
         if (cancelledRef.current) return;
-        setText(PHRASE.slice(0, i));
+        setText(phrase.slice(0, i));
         await wait(DELETE_SPEED);
       }
     };
 
     const loop = async () => {
       await wait(START_DELAY);
+      let index = 0;
       while (!cancelledRef.current) {
-        await typePhrase();
+        const phrase = PHRASES[index];
+        await typePhrase(phrase);
         await wait(HOLD_AFTER_TYPED);
-        await deletePhrase();
+        await deletePhrase(phrase);
         await wait(PAUSE_BEFORE_RETYPE);
+        index = (index + 1) % PHRASES.length;
       }
     };
 
@@ -71,7 +80,7 @@ export default function TypewriterHeadline({ className }: Props) {
   }, []);
 
   return (
-    <h1 className={className} aria-label={PHRASE}>
+    <h1 className={className} aria-label={PHRASES[0]}>
       <span>{text}</span>
       <span className={styles.caret} aria-hidden="true" />
     </h1>
