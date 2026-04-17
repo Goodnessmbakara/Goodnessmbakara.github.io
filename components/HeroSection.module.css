@@ -98,6 +98,29 @@
   letter-spacing: 0.01em;
 }
 
+/* ===== Typewriter Caret ===== */
+.caret {
+  display: inline-block;
+  width: 0.05em;
+  height: 0.82em;
+  background: currentColor;
+  margin-left: 0.08em;
+  vertical-align: -0.08em;
+  animation: caretBlink 1.05s steps(2, jump-none) infinite;
+}
+
+@keyframes caretBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 .ctaGroup {
   display: flex;
   gap: 1rem;

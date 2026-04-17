@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import ContactInfoCard from "@/components/ContactInfoCard";
 import FeaturedProjectCard from "@/components/FeaturedProjectCard";
+import TypewriterHeadline from "@/components/TypewriterHeadline";
 
 const featuredProjects = [
   {
@@ -91,9 +92,7 @@ export default function Home() {
           <div className={layoutStyles.container}>
             <div className={styles.heroContent}>
               <span className={styles.overline}>Software Engineer & Builder</span>
-              <h1 className={styles.headline}>
-                Ship it. Then ship the next one.
-              </h1>
+              <TypewriterHeadline className={styles.headline} />
               <p className={styles.intro}>
                 The gap between an idea and a product is discipline. I close
                 that gap with code, with teams, with deadlines that don't
