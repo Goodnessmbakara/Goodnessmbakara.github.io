@@ -27,9 +27,9 @@
 
 /* ===== Info Card ===== */
 .infoCard {
-  background: var(--text-primary);
+  background: linear-gradient(145deg, #2d2640 0%, #1a1528 100%);
   color: #fff;
-  border-radius: 3px;
+  border-radius: var(--radius-lg);
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -65,7 +65,7 @@
   font-weight: 500;
   font-size: 0.875rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
   padding: 0.5rem 1rem;
   text-decoration: none;
   transition: background 0.2s;
@@ -78,9 +78,9 @@
 
 /* ===== Form Card ===== */
 .card {
-  background: var(--bg);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: var(--radius-lg);
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
@@ -106,7 +106,7 @@
   width: 100%;
   padding: 0.75rem 1rem;
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
   background: var(--bg);
   color: var(--text-primary);
   font-size: 0.9375rem;
@@ -134,7 +134,7 @@
   font-family: var(--font-body);
   padding: 0.8125rem 0;
   border: none;
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: background 0.2s;
   margin-top: 0.5rem;
@@ -156,7 +156,7 @@
   background: #f0fdf4;
   color: #166534;
   border: 1px solid #bbf7d0;
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
   padding: 0.75rem 1rem;
   font-size: 0.9375rem;
 }
@@ -168,7 +168,7 @@
   background: #fef2f2;
   color: #991b1b;
   border: 1px solid #fecaca;
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
   padding: 0.75rem 1rem;
   font-size: 0.9375rem;
 }

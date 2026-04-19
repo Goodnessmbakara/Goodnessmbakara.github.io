@@ -1,12 +1,15 @@
 /* ===== Design System ===== */
 :root {
-  --bg: #ffffff;
-  --bg-secondary: #f7f7f7;
-  --text-primary: #111111;
-  --text-secondary: #555555;
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
-  --border: #e0e0e0;
+  --bg: #f7f4fc;
+  --bg-secondary: #ede9f7;
+  --text-primary: #1a1528;
+  --text-secondary: #524a66;
+  --accent: #6d28d9;
+  --accent-hover: #5b21b6;
+  --border: #ddd6ee;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
   --font-display: 'Instrument Serif', Georgia, serif;
   --font-headline: 'Sniglet', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -24,7 +27,8 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background: linear-gradient(165deg, #f3effa 0%, var(--bg) 38%, #ebe4f6 100%);
+  background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 17px;

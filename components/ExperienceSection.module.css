@@ -28,9 +28,9 @@
 }
 
 .card {
-  background: var(--bg);
+  background: rgba(255, 255, 255, 0.88);
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: var(--radius-md);
   padding: 2rem;
   transition: border-color 0.2s;
 }
@@ -77,7 +77,7 @@
   text-transform: uppercase;
   color: var(--text-secondary);
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: var(--radius-sm);
   padding: 0.25rem 0.625rem;
   white-space: nowrap;
   background: transparent;
