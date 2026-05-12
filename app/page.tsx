@@ -42,9 +42,9 @@ const featuredProjects = [
     name: "Bucx",
     description:
       "Borderless banking solution powered by stablecoins. Open virtual USD accounts, receive payments instantly, and spend globally with your virtual card.",
-    liveUrl: "https://www.bucx.app/",
+    liveUrl: "https://bucx.app",
     fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://www.bucx.app/",
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://bucx.app",
   },
   {
     name: "YouSpeak",
