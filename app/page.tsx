@@ -50,9 +50,9 @@ const featuredProjects = [
     name: "YouSpeak",
     description:
       "Speak, Learn and Live the Language. A global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors.",
-    liveUrl: "https://youspeakhq.com",
+    liveUrl: "https://www.youspeakhq.com/",
     fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://youspeakhq.com",
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://www.youspeakhq.com/",
   },
   {
     name: "Kiipa",
