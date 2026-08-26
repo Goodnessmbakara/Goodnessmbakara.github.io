@@ -1,0 +1,186 @@
+.floatingContainer {
+  position: fixed;
+  bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+  right: calc(2rem + env(safe-area-inset-right, 0px));
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  isolation: isolate;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+}
+
+.floatingContainer:active,
+.isDragging {
+  cursor: grabbing !important;
+}
+
+/* Reverse layout if dragged to the left side of viewport */
+.reverseLayout {
+  flex-direction: row-reverse;
+}
+
+.reverseLayout .tooltip {
+  align-items: flex-start;
+  transform: translateX(-8px);
+}
+
+.floatingContainer.reverseLayout:hover .tooltip,
+.floatingContainer.reverseLayout:focus-within .tooltip {
+  transform: translateX(0);
+}
+
+.tooltip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background: rgba(26, 21, 40, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-sm, 10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.tooltipTitle {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.tooltipSubtitle {
+  font-family: var(--font-body, system-ui, sans-serif);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.02em;
+}
+
+.buttonWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pulsing background ripple */
+.pulseRing {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.35);
+  animation: pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4), 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease;
+  position: relative;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.onlineBadge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 13px;
+  height: 13px;
+  background-color: #22c55e;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  display: block;
+}
+
+/* Hover / Focus States */
+.floatingContainer:not(.isDragging):hover .tooltip,
+.floatingContainer:not(.isDragging):focus-within .tooltip {
+  opacity: 1;
+}
+
+.floatingContainer:not(.isDragging):hover .button,
+.floatingContainer:focus-visible .button {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5), 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.floatingContainer.isDragging .button {
+  transform: scale(1.06);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25), 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.floatingContainer:active .button {
+  transform: scale(0.96) translateY(0);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--accent, #6d28d9);
+  outline-offset: 3px;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .floatingContainer {
+    bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+    right: calc(1.25rem + env(safe-area-inset-right, 0px));
+  }
+
+  .button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .tooltip {
+    display: none;
+  }
+}

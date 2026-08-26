@@ -1,5 +1,6 @@
 import "./global-styles.css";
 import type { Metadata, Viewport } from "next";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const TITLE = "Goodness Mbakara — Ideas are cheap. Execution ships.";
 const DESCRIPTION =
@@ -51,7 +52,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <FloatingWhatsApp />
+      </body>
     </html>
   );
 }
