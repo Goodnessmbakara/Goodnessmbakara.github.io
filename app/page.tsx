@@ -1,11 +1,9 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
 import styles from "../components/HeroSection.module.css";
 import layoutStyles from "../components/Layout.module.css";
 import experienceStyles from "../components/ExperienceSection.module.css";
 import projectsStyles from "../components/ProjectsSection.module.css";
-import winsStyles from "../components/WinsSection.module.css";
 import contactStyles from "../components/ContactSection.module.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,144 +11,8 @@ import ContactForm from "@/components/ContactForm";
 import ContactInfoCard from "@/components/ContactInfoCard";
 import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 import TypewriterHeadline from "@/components/TypewriterHeadline";
-
-const featuredProjects = [
-  {
-    name: "YouSpeak",
-    description:
-      "Speak, Learn and Live the Language. A global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors. A year building it, with 1,100+ backend commits in the last 9 months.",
-    liveUrl: "https://www.youspeakhq.com/",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://www.youspeakhq.com/",
-  },
-  {
-    name: "AvaBid",
-    description:
-      "Auction dApp built for the ACES hackathon on Avalanche, later moved to Lisk. On-chain bidding with transparent settlement.",
-  },
-  {
-    name: "ShardTip",
-    description:
-      "Micro-tipping dapp for sending SHM tips to creators on Shardeum Unstablenet. Built for the Shardeum PayFi Mini Hack.",
-    liveUrl: "https://shard-tip.vercel.app/",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://shard-tip.vercel.app/",
-  },
-  {
-    name: "Keepr",
-    description:
-      "Digital inheritance product deployed on Lisk Sepolia. Enables secure, transparent, and automated inheritance management with smart contracts.",
-    liveUrl: "https://kiipa.vercel.app/",
-    githubUrl: "https://github.com/Goodnessmbakara/kiipa",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://kiipa.vercel.app/",
-  },
-  {
-    name: "EstateSync",
-    description:
-      "Estate expense management platform for Nigerian properties. Set up estates, invite stakeholders, allocate and track expenses, one-time or recurring. Role-based access for managers, homeowners, and tenants.",
-    liveUrl: "https://estatesync.com.ng",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://estatesync.com.ng",
-  },
-  {
-    name: "Tilt Pay",
-    description:
-      "Mobile payment app built on Solana blockchain. Instant, secure payments across online, in-store and peer-to-peer. No hardware costs, no hidden fees, just 1% on tap-to-pay. Universal currency with zero-fee transfers.",
-    liveUrl: "https://tilt-pay.com",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://tilt-pay.com",
-  },
-  {
-    name: "AliveHome",
-    description:
-      "Nigeria's first AI-powered real estate ecosystem designed to reduce fraud and improve transparency. Features verified listings, secure communication, and virtual tours.",
-    liveUrl: "https://alivehome.co",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://alivehome.co",
-  },
-  {
-    name: "Bucx",
-    description:
-      "Borderless banking solution powered by stablecoins. Open virtual USD accounts, receive payments instantly, and spend globally with your virtual card.",
-    liveUrl: "https://bucx.app",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://bucx.app",
-  },
-  {
-    name: "Solana Fellowship Server",
-    description:
-      "Rust-based Solana development server for keypair generation, SPL token operations, and message signing. Selected for Superdevs Academy (Top 400/5000+).",
-    githubUrl: "https://github.com/Goodnessmbakara/solana-fellowship-server",
-  },
-];
-
-const wins = [
-  {
-    place: "1st place",
-    title: "Shardeum PayFi Mini Hack",
-    meta: "Uyo, Nigeria · Aug 30, 2025",
-    detail:
-      "Built ShardTip — a micro-tipping dapp for SHM tips to creators on Shardeum Unstablenet.",
-    links: [
-      { label: "Proof", href: "https://x.com/0x_ikay/status/1971152785711432016" },
-      {
-        label: "Official results",
-        href: "https://x.com/shardeum/status/1970775234266698155",
-      },
-      { label: "App", href: "https://shard-tip.vercel.app/" },
-      { label: "Demo", href: "https://youtu.be/bHx0a72eYLE" },
-    ],
-  },
-  {
-    place: "Best Team",
-    title: "FTLD × Lisk Smart Contract Developer Cohort",
-    meta: "Team lead, Team Defy · Jul 2025",
-    detail: "Led Team Defy to Best Team recognition in the cohort.",
-    links: [
-      {
-        label: "Proof",
-        href: "https://x.com/FTLDOfficial_/status/1942608996839346464",
-      },
-    ],
-  },
-  {
-    place: "2nd place",
-    title: "ACES hackathon — Avalanche Nigeria",
-    meta: "May 2025",
-    detail: "Built AvaBid, an auction dApp on Avalanche.",
-    links: [
-      {
-        label: "Proof",
-        href: "https://x.com/uniuyoaces/status/1937795685090198000",
-      },
-    ],
-  },
-  {
-    place: "3rd place",
-    title: "UniUyo Sui Buildathon",
-    meta: "Team SkillsVerse · Mar 2025 · $200",
-    detail: "Podium finish with Team SkillsVerse.",
-    links: [
-      {
-        label: "Proof",
-        href: "https://x.com/suioncampus/status/1898615885641769276",
-      },
-    ],
-  },
-  {
-    place: "2nd place",
-    title: "Neon EVM Developer Bootcamp",
-    meta: "Jul 2025",
-    detail: "Second place in the Neon EVM Developer Bootcamp.",
-    links: [
-      {
-        label: "Proof",
-        href: "https://x.com/Neon_EVM/status/1951264708939420046",
-      },
-    ],
-  },
-];
+import WinsSection from "@/components/WinsSection";
+import { featuredProjects } from "@/data/featuredProjects";
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -201,54 +63,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Wins Section */}
-        <section
-          id="wins"
-          className={`${layoutStyles.sectionPadding} ${winsStyles.section}`}
-        >
-          <div className={layoutStyles.container}>
-            <div className={winsStyles.header}>
-              <div className={winsStyles.sectionLabel}>Wins</div>
-              <h2>Receipts over rumors.</h2>
-              <p
-                style={{
-                  color: "var(--text-secondary)",
-                  maxWidth: 560,
-                  marginTop: "1rem",
-                }}
-              >
-                Hackathon podiums and cohort awards — each with public proof.
-              </p>
-            </div>
-            <ul className={winsStyles.list}>
-              {wins.map((win) => (
-                <li key={win.title} className={winsStyles.item}>
-                  <div className={winsStyles.itemTop}>
-                    <h3 className={winsStyles.title}>{win.title}</h3>
-                    <span className={winsStyles.place}>{win.place}</span>
-                  </div>
-                  <p className={winsStyles.meta}>{win.meta}</p>
-                  <p className={winsStyles.detail}>{win.detail}</p>
-                  <div className={winsStyles.links}>
-                    {win.links.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={winsStyles.link}
-                      >
-                        <ExternalLink size={14} />
-                        {link.label}
-                      </a>
-                    ))}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
         {/* Projects Section */}
         <section
           id="projects"
@@ -279,8 +93,8 @@ export default function Home() {
                 gap: "1.5rem",
               }}
             >
-              {featuredProjects.map((project, idx) => (
-                <FeaturedProjectCard key={idx} {...project} />
+              {featuredProjects.map((project) => (
+                <FeaturedProjectCard key={project.name} {...project} />
               ))}
             </div>
           </div>
@@ -536,6 +350,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <WinsSection />
 
         {/* Contact Section */}
         <section

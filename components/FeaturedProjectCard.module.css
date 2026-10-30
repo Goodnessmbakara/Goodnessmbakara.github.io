@@ -7,9 +7,10 @@
   flex-direction: row;
   min-width: 0;
   max-width: 100%;
+  min-height: 280px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04),
     0 4px 12px -2px rgba(0, 0, 0, 0.06);
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .card:hover {
@@ -19,40 +20,103 @@
   transform: translateY(-2px);
 }
 
-.previewWrapper {
-  flex: 2.4 1 0;
+.visual {
+  --visual-from: #312e81;
+  --visual-to: #7c3aed;
+  --visual-accent: #c4b5fd;
+  flex: 1.15 1 0;
   min-width: 0;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  background: var(--bg-secondary);
+  min-height: 280px;
   position: relative;
-  aspect-ratio: 16/8.5;
-}
-
-.iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: var(--bg-secondary);
-  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem 1.5rem 1.35rem;
+  background: linear-gradient(
+    145deg,
+    var(--visual-from) 0%,
+    var(--visual-to) 100%
+  );
+  background-size: 140% 140%;
+  animation: gradientDrift 14s ease-in-out infinite alternate;
   border-right: 1px solid var(--border);
+  overflow: hidden;
+  color: #fff;
 }
 
-.fallbackImg {
+.visualGlow {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: -20% -10% auto auto;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--visual-accent) 35%, transparent) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.motifWrap {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  opacity: 0.95;
+}
+
+.motifWrap svg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+}
+
+.visualCopy {
+  position: relative;
   z-index: 1;
-  display: none;
+  max-width: 16rem;
+}
+
+.visualName {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 0.35rem;
+}
+
+.visualTagline {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 0.85rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
 }
 
 .content {
   flex: 1 1 0;
-  padding: 2rem 1.75rem;
+  padding: 1.75rem 1.75rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,45 +183,85 @@
   border-color: var(--text-primary);
 }
 
-.ghIconWrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-secondary);
-  height: 340px;
-  min-width: 0;
-  flex: 2.4 1 0;
-  border-right: 1px solid var(--border);
+@keyframes gradientDrift {
+  from {
+    background-position: 0% 40%;
+  }
+  to {
+    background-position: 100% 60%;
+  }
 }
 
-.ghIcon {
-  color: var(--text-secondary);
-  opacity: 0.4;
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .visual {
+    animation: none;
+  }
 }
 
 @media (max-width: 768px) {
   .card {
     flex-direction: column;
+    min-height: 0;
   }
-  .previewWrapper,
-  .ghIconWrap {
+
+  .visual {
+    min-height: 220px;
     border-right: none;
     border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.25rem 1.15rem;
   }
-  .iframe {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
+
+  .motifWrap {
+    width: 6rem;
+    height: 6rem;
+    top: 0.75rem;
+    right: 0.75rem;
   }
+
+  .visualName {
+    font-size: 1.5rem;
+  }
+
   .content {
     padding: 1.5rem 1.25rem;
   }
+
   .buttonGroup {
     flex-direction: column;
     gap: 0.5rem;
   }
+
   .primaryButton,
   .secondaryButton {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 375px) {
+  .visual {
+    min-height: 200px;
+  }
+
+  .motifWrap {
+    width: 5.25rem;
+    height: 5.25rem;
+  }
+
+  .visualCopy {
+    max-width: 12.5rem;
+  }
+
+  .badge {
+    font-size: 0.625rem;
+    padding: 0.2rem 0.4rem;
   }
 }

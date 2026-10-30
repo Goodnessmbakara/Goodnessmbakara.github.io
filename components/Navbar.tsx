@@ -2,11 +2,15 @@
 
 import { useState } from "react";
 import layoutStyles from "./Layout.module.css";
+import { EXPAND_WINS_EVENT } from "@/data/wins";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
+    if (sectionId === "wins") {
+      window.dispatchEvent(new CustomEvent(EXPAND_WINS_EVENT));
+    }
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);

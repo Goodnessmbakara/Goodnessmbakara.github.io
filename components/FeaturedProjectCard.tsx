@@ -1,12 +1,15 @@
+import type { CSSProperties } from "react";
 import styles from "./FeaturedProjectCard.module.css";
 import { ExternalLink, Github } from "lucide-react";
+import type { ProjectVisual } from "@/data/featuredProjects";
+import ProjectMotifIcon from "./ProjectMotifs";
 
 interface FeaturedProjectCardProps {
   name: string;
   description: string;
   liveUrl?: string;
   githubUrl?: string;
-  fallbackImageUrl?: string;
+  visual: ProjectVisual;
 }
 
 export default function FeaturedProjectCard({
@@ -14,34 +17,36 @@ export default function FeaturedProjectCard({
   description,
   liveUrl,
   githubUrl,
-  fallbackImageUrl,
+  visual,
 }: FeaturedProjectCardProps) {
   return (
-    <div className={styles.card}>
-      {liveUrl ? (
-        <div className={styles.previewWrapper}>
-          <iframe
-            src={liveUrl}
-            title={name + " preview"}
-            className={styles.iframe}
-            loading="lazy"
-            sandbox="allow-scripts allow-same-origin allow-popups"
-            allowFullScreen
-          />
-          {/* fallback image if iframe fails */}
-          {fallbackImageUrl && (
-            <img
-              src={fallbackImageUrl}
-              alt={name + " preview"}
-              className={styles.fallbackImg}
-            />
-          )}
+    <article className={styles.card}>
+      <div
+        className={styles.visual}
+        style={
+          {
+            "--visual-from": visual.gradientFrom,
+            "--visual-to": visual.gradientTo,
+            "--visual-accent": visual.accent,
+          } as CSSProperties
+        }
+      >
+        <div className={styles.visualGlow} aria-hidden="true" />
+        <div className={styles.motifWrap}>
+          <ProjectMotifIcon motif={visual.motif} accent={visual.accent} />
         </div>
-      ) : githubUrl ? (
-        <div className={styles.ghIconWrap}>
-          <Github size={48} className={styles.ghIcon} />
+        <div className={styles.visualCopy}>
+          <h3 className={styles.visualName}>{name}</h3>
+          <p className={styles.visualTagline}>{visual.tagline}</p>
+          <div className={styles.badges}>
+            {visual.badges.map((badge) => (
+              <span key={badge} className={styles.badge}>
+                {badge}
+              </span>
+            ))}
+          </div>
         </div>
-      ) : null}
+      </div>
       <div className={styles.content}>
         <h3 className={styles.title}>{name}</h3>
         <p className={styles.desc}>{description}</p>
@@ -70,6 +75,6 @@ export default function FeaturedProjectCard({
           )}
         </div>
       </div>
-    </div>
+    </article>
   );
 }
