@@ -1,10 +1,11 @@
 "use client";
 
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import styles from "../components/HeroSection.module.css";
 import layoutStyles from "../components/Layout.module.css";
 import experienceStyles from "../components/ExperienceSection.module.css";
 import projectsStyles from "../components/ProjectsSection.module.css";
+import winsStyles from "../components/WinsSection.module.css";
 import contactStyles from "../components/ContactSection.module.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -14,6 +15,36 @@ import FeaturedProjectCard from "@/components/FeaturedProjectCard";
 import TypewriterHeadline from "@/components/TypewriterHeadline";
 
 const featuredProjects = [
+  {
+    name: "YouSpeak",
+    description:
+      "Speak, Learn and Live the Language. A global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors. 9 months and 1,100+ backend commits.",
+    liveUrl: "https://www.youspeakhq.com/",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://www.youspeakhq.com/",
+  },
+  {
+    name: "AvaBid",
+    description:
+      "Auction dApp built for the ACES hackathon on Avalanche, later moved to Lisk. On-chain bidding with transparent settlement.",
+  },
+  {
+    name: "ShardTip",
+    description:
+      "Micro-tipping dapp for sending SHM tips to creators on Shardeum Unstablenet. Built for the Shardeum PayFi Mini Hack.",
+    liveUrl: "https://shard-tip.vercel.app/",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://shard-tip.vercel.app/",
+  },
+  {
+    name: "Keepr",
+    description:
+      "Digital inheritance product deployed on Lisk Sepolia. Enables secure, transparent, and automated inheritance management with smart contracts.",
+    liveUrl: "https://kiipa.vercel.app/",
+    githubUrl: "https://github.com/Goodnessmbakara/kiipa",
+    fallbackImageUrl:
+      "https://image.thum.io/get/width/800/crop/600/noanimate/https://kiipa.vercel.app/",
+  },
   {
     name: "EstateSync",
     description:
@@ -47,27 +78,77 @@ const featuredProjects = [
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://bucx.app",
   },
   {
-    name: "YouSpeak",
-    description:
-      "Speak, Learn and Live the Language. A global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors.",
-    liveUrl: "https://www.youspeakhq.com/",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://www.youspeakhq.com/",
-  },
-  {
-    name: "Kiipa",
-    description:
-      "Decentralized digital inheritance platform built on Lisk blockchain. Enables secure, transparent, and automated inheritance management with smart contracts.",
-    liveUrl: "https://kiipa.vercel.app/",
-    githubUrl: "https://github.com/Goodnessmbakara/kiipa",
-    fallbackImageUrl:
-      "https://image.thum.io/get/width/800/crop/600/noanimate/https://kiipa.vercel.app/",
-  },
-  {
     name: "Solana Fellowship Server",
     description:
       "Rust-based Solana development server for keypair generation, SPL token operations, and message signing. Selected for Superdevs Academy (Top 400/5000+).",
     githubUrl: "https://github.com/Goodnessmbakara/solana-fellowship-server",
+  },
+];
+
+const wins = [
+  {
+    place: "1st place",
+    title: "Shardeum PayFi Mini Hack",
+    meta: "Uyo, Nigeria · Aug 30, 2025",
+    detail:
+      "Built ShardTip — a micro-tipping dapp for SHM tips to creators on Shardeum Unstablenet.",
+    links: [
+      { label: "Proof", href: "https://x.com/0x_ikay/status/1971152785711432016" },
+      {
+        label: "Official results",
+        href: "https://x.com/shardeum/status/1970775234266698155",
+      },
+      { label: "App", href: "https://shard-tip.vercel.app/" },
+      { label: "Demo", href: "https://youtu.be/bHx0a72eYLE" },
+    ],
+  },
+  {
+    place: "Best Team",
+    title: "FTLD × Lisk Smart Contract Developer Cohort",
+    meta: "Team lead, Team Defy · Jul 2025",
+    detail: "Led Team Defy to Best Team recognition in the cohort.",
+    links: [
+      {
+        label: "Proof",
+        href: "https://x.com/FTLDOfficial_/status/1942608996839346464",
+      },
+    ],
+  },
+  {
+    place: "2nd place",
+    title: "ACES hackathon — Avalanche Nigeria",
+    meta: "May 2025",
+    detail: "Built AvaBid, an auction dApp on Avalanche.",
+    links: [
+      {
+        label: "Proof",
+        href: "https://x.com/uniuyoaces/status/1937795685090198000",
+      },
+    ],
+  },
+  {
+    place: "3rd place",
+    title: "UniUyo Sui Buildathon",
+    meta: "Team SkillsVerse · Mar 2025 · $200",
+    detail: "Podium finish with Team SkillsVerse.",
+    links: [
+      {
+        label: "Proof",
+        href: "https://x.com/suioncampus/status/1898615885641769276",
+      },
+    ],
+  },
+  {
+    place: "2nd place",
+    title: "Neon EVM Developer Bootcamp",
+    meta: "Jul 2025",
+    detail: "Second place in the Neon EVM Developer Bootcamp.",
+    links: [
+      {
+        label: "Proof",
+        href: "https://x.com/Neon_EVM/status/1951264708939420046",
+      },
+    ],
   },
 ];
 
@@ -95,9 +176,12 @@ export default function Home() {
               <TypewriterHeadline className={styles.headline} />
               <p className={styles.intro}>
                 The gap between an idea and a product is discipline. I close
-                that gap with code, with teams, with deadlines that don't
-                bend. <strong className={styles.introHighlight}>7 HACKATHONS WON!</strong> 30 engineers led. Products
-                people actually use.
+                that gap with code, with teams, with deadlines that don&apos;t
+                bend.{" "}
+                <strong className={styles.introHighlight}>
+                  Hackathon winner: Shardeum PayFi 1st, ACES 2nd, Neon EVM 2nd
+                </strong>{" "}
+                30 engineers led. Products people actually use.
               </p>
               <div className={styles.ctaGroup}>
                 <button
@@ -114,6 +198,54 @@ export default function Home() {
                 </button>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Wins Section */}
+        <section
+          id="wins"
+          className={`${layoutStyles.sectionPadding} ${winsStyles.section}`}
+        >
+          <div className={layoutStyles.container}>
+            <div className={winsStyles.header}>
+              <div className={winsStyles.sectionLabel}>Wins</div>
+              <h2>Receipts over rumors.</h2>
+              <p
+                style={{
+                  color: "var(--text-secondary)",
+                  maxWidth: 560,
+                  marginTop: "1rem",
+                }}
+              >
+                Hackathon podiums and cohort awards — each with public proof.
+              </p>
+            </div>
+            <ul className={winsStyles.list}>
+              {wins.map((win) => (
+                <li key={win.title} className={winsStyles.item}>
+                  <div className={winsStyles.itemTop}>
+                    <h3 className={winsStyles.title}>{win.title}</h3>
+                    <span className={winsStyles.place}>{win.place}</span>
+                  </div>
+                  <p className={winsStyles.meta}>{win.meta}</p>
+                  <p className={winsStyles.detail}>{win.detail}</p>
+                  <div className={winsStyles.links}>
+                    {win.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={winsStyles.link}
+                      >
+                        <ExternalLink size={14} />
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -297,7 +429,7 @@ export default function Home() {
                   <li className={experienceStyles.flex}>
                     <div className={experienceStyles.dot}></div>
                     <span>
-                      Joined as CTO and shipped the MVP in three weeks
+                      Joined as CTO and deployed the MVP to Fly.io in 2 days
                     </span>
                   </li>
                   <li className={experienceStyles.flex}>
@@ -422,7 +554,7 @@ export default function Home() {
                 }}
               >
                 I build things with people who care about the outcome. If that
-                sounds like you, let's talk.
+                sounds like you, let&apos;s talk.
               </p>
             </div>
 

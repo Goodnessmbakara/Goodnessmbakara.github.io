@@ -37,11 +37,11 @@ export default function FeaturedProjectCard({
             />
           )}
         </div>
-      ) : (
+      ) : githubUrl ? (
         <div className={styles.ghIconWrap}>
           <Github size={48} className={styles.ghIcon} />
         </div>
-      )}
+      ) : null}
       <div className={styles.content}>
         <h3 className={styles.title}>{name}</h3>
         <p className={styles.desc}>{description}</p>

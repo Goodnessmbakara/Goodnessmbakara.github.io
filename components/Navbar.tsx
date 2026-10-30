@@ -42,6 +42,7 @@ export default function Navbar() {
 
       {/* Right-side vertical nav (desktop) */}
       <nav className={layoutStyles.sideNav}>
+        <button onClick={() => scrollToSection("wins")}>Wins</button>
         <button onClick={() => scrollToSection("projects")}>Projects</button>
         <button onClick={() => scrollToSection("experience")}>Experience</button>
         <button onClick={() => scrollToSection("contact")}>Contact</button>
@@ -60,6 +61,7 @@ export default function Navbar() {
       >
         <nav className={layoutStyles.mobileOverlayNav}>
           <button onClick={() => scrollToSection("hero")}>Home</button>
+          <button onClick={() => scrollToSection("wins")}>Wins</button>
           <button onClick={() => scrollToSection("projects")}>Projects</button>
           <button onClick={() => scrollToSection("experience")}>Experience</button>
           <button onClick={() => scrollToSection("contact")}>Contact</button>

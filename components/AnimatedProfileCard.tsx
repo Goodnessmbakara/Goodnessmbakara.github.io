@@ -7,7 +7,7 @@ export default function AnimatedProfileCard() {
   const [currentIdx, setCurrentIdx] = useState(0);
 
   const achievements = [
-    "7 Hackathons Won",
+    "Hackathon podiums: 1st, 2nd, 3rd",
     "30+ Engineers Led",
     "Ships on Deadline",
     "Builds On-Chain",
