@@ -15,6 +15,13 @@ export const metadata: Metadata = {
     "Goodness Mbakara, Software Engineer, Backend Engineer, Blockchain Developer, Django, FastAPI, Python, Solidity, Web3, Builder",
   authors: [{ name: "Goodness Mbakara" }],
   robots: "index, follow",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+    ],
+    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
@@ -52,7 +59,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

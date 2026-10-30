@@ -18,7 +18,7 @@ const featuredProjects = [
   {
     name: "YouSpeak",
     description:
-      "Speak, Learn and Live the Language. A global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors. 9 months and 1,100+ backend commits.",
+      "Speak, Learn and Live the Language. A global platform where AI meets Conversation, Community, and Challenges for Individuals, Schools, and Tutors. A year building it, with 1,100+ backend commits in the last 9 months.",
     liveUrl: "https://www.youspeakhq.com/",
     fallbackImageUrl:
       "https://image.thum.io/get/width/800/crop/600/noanimate/https://www.youspeakhq.com/",
