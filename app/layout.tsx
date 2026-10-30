@@ -2,11 +2,13 @@ import "./global-styles.css";
 import type { Metadata, Viewport } from "next";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
+const SITE_URL = "https://www.goodnessmbakara.online";
 const TITLE = "Goodness Mbakara — Ideas are cheap. Execution ships.";
 const DESCRIPTION =
   "The gap between an idea and a product is discipline. I close that gap with code, with teams, with deadlines that don't bend. Software engineer shipping proof of work, not proof of concept.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
   keywords:
@@ -16,14 +18,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
+    url: SITE_URL,
     siteName: "GoodnessMbakara.eth",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: TITLE,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: [`${SITE_URL}/opengraph-image`],
   },
 };
 

@@ -215,13 +215,16 @@
     transform: translateY(-50%);
   }
 
-  /* Headline: fluid, dramatic, tight */
+  /* Headline: fluid sizing so ~375px screens don't clip typewriter lines */
   .headline {
-    font-size: clamp(2.75rem, 11.5vw, 3.5rem);
-    line-height: 1.02;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.15rem, 9.2vw, 2.85rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
     margin-top: 0;
     margin-bottom: 2.25rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
   }
 
   .intro {
@@ -234,7 +237,7 @@
   .introHighlight {
     font-weight: 700;
     letter-spacing: 0.02em;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   /* Buttons: larger touch targets, refined */
@@ -277,7 +280,8 @@
 /* ===== Very small devices (≤380px) ===== */
 @media (max-width: 380px) {
   .headline {
-    font-size: clamp(2.375rem, 10.5vw, 2.75rem);
+    font-size: clamp(1.95rem, 8.6vw, 2.4rem);
+    line-height: 1.14;
   }
   .intro {
     font-size: 1rem;
