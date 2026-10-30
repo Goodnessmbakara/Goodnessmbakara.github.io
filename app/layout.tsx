@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
     ],
-    apple: [{ url: "/apple-icon", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
     title: TITLE,
