@@ -45,6 +45,8 @@ export const featuredProjects: FeaturedProject[] = [
     name: "AvaBid",
     description:
       "Auction dApp built for the ACES hackathon on Avalanche, later moved to Lisk. On-chain bidding with transparent settlement.",
+    liveUrl: "https://auction-app-mauve.vercel.app",
+    githubUrl: "https://github.com/Goodnessmbakara/auction-app",
     visual: {
       motif: "gavel",
       tagline: "On-chain auctions",
